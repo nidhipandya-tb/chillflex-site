@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ChillFlex Performance Suit</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:oklch(0.93 0.006 80);font-family:'Geist',system-ui,sans-serif;color:oklch(0.22 0.015 260);-webkit-font-smoothing:antialiased}
+a{color:oklch(0.40 0.09 258)}a:hover{color:oklch(0.22 0.015 260)}
+button{font-family:inherit}
+@keyframes mwPulse{0%{transform:scale(1);opacity:.85}100%{transform:scale(2.3);opacity:0}}
+@keyframes mwStretch{0%,100%{transform:scale(1,1)}30%{transform:scale(1.32,.86)}65%{transform:scale(.88,1.3)}}
+@keyframes mwSwing{0%,100%{left:16%}50%{left:84%}}
+@keyframes mwRise{0%{transform:translateY(0);opacity:0}20%{opacity:1}100%{transform:translateY(-260%);opacity:0}}
+@keyframes mwCrease{0%,25%{opacity:.75}60%,100%{opacity:0}}
+@keyframes mwClip{0%,100%{clip-path:inset(0 70% 0 0)}50%{clip-path:inset(0 30% 0 0)}}
+@keyframes mwLine{0%,100%{left:30%}50%{left:70%}}
+@keyframes mwHovStretch{0%,100%{transform:scale(1,1)}35%{transform:scale(1.07,.95)}70%{transform:scale(.96,1.06)}}
+@keyframes mwHovSway{0%,100%{transform:translateX(-6px)}50%{transform:translateX(6px)}}
+@keyframes mwHovRise{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes mwHovSmooth{0%{transform:rotate(-4deg) skewX(-6deg)}55%,100%{transform:none}}
+@keyframes mwBob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500&display=swap">
+</helmet>
+<div style="height:100vh;display:flex;flex-direction:column;overflow:hidden">
+
+
+  <main style="flex:1;display:block;padding:0">
+    <div ref="{{ frameRef }}" onScroll="{{ onFrameScroll }}" style="{{ frameStyle }}">
+
+      <sc-if value="{{ fDesk }}" hint-placeholder-val="{{ true }}">
+        <div style="{{ hdrStick }}">
+        <div style="display:flex;align-items:center;gap:clamp(16px,3vw,44px);padding:0 clamp(20px,3.5vw,48px);height:76px;background:#fff;color:#111">
+          <div style="font-family:'Bodoni Moda','Didot','Bodoni MT','Times New Roman',serif;font-size:17px;font-weight:500;letter-spacing:0.24em;white-space:nowrap;color:#111;flex:none">MEN’S WEARHOUSE</div>
+          <div style="flex:1"></div>
+          <div style="display:flex;align-items:center;gap:4px;flex:none">
+            <button aria-label="Search" title="Search" style="width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:none;background:transparent;color:#111;cursor:pointer;padding:0;transition:transform .3s cubic-bezier(.2,.8,.2,1)" style-hover="transform:translateY(-2px) rotate(-8deg)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="flex:none;display:block"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4.5 4.5"></path></svg></button>
+            <button aria-label="Find a Store" title="Find a Store" style="width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:none;background:transparent;color:#111;cursor:pointer;padding:0;transition:transform .3s cubic-bezier(.2,.8,.2,1)" style-hover="transform:translateY(-2px) rotate(-8deg)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="flex:none;display:block"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z"></path><circle cx="12" cy="10" r="2"></circle></svg></button>
+            <button aria-label="Sign in" title="Sign in" style="width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:none;background:transparent;color:#111;cursor:pointer;padding:0;transition:transform .3s cubic-bezier(.2,.8,.2,1)" style-hover="transform:translateY(-2px) rotate(-8deg)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="flex:none;display:block"><circle cx="12" cy="8" r="3.6"></circle><path d="M4.5 21l3-6.5h9l3 6.5"></path></svg></button>
+            <button aria-label="Bag" title="Bag" style="width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:none;background:transparent;color:#111;cursor:pointer;padding:0;transition:transform .3s cubic-bezier(.2,.8,.2,1)" style-hover="transform:translateY(-2px) rotate(-8deg)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="flex:none;display:block"><path d="M5 8h14v13H5z"></path><path d="M9 8V5.5a3 3 0 0 1 6 0V8"></path></svg></button>
+          </div>
+        </div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ fMobile }}" hint-placeholder-val="{{ false }}">
+        <div style="{{ hdrStick }}">
+        <div style="display:flex;align-items:center;gap:4px;padding:0 8px 0 16px;height:56px;background:#fff;color:#111">
+          <div style="font-family:'Bodoni Moda','Didot','Bodoni MT','Times New Roman',serif;font-size:13px;font-weight:500;letter-spacing:0.2em;white-space:nowrap;color:#111;flex:none">MEN’S WEARHOUSE</div>
+          <div style="flex:1"></div>
+          <button aria-label="Search" style="width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:none;background:transparent;color:#111;padding:0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="flex:none;display:block"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4.5 4.5"></path></svg></button>
+          <button aria-label="Bag" style="width:44px;height:44px;display:flex;align-items:center;justify-content:center;border:none;background:transparent;color:#111;padding:0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="flex:none;display:block"><path d="M5 8h14v13H5z"></path><path d="M9 8V5.5a3 3 0 0 1 6 0V8"></path></svg></button>
+        </div>
+        </div>
+      </sc-if>
+
+      <!-- F · EMBEDDED FEATURES -->
+      <sc-if value="{{ isF }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column">
+        <div ref="{{ fWrapRef }}" style="{{ fWrap }}">
+          <div ref="{{ fLeftRef }}" style="{{ fLeft }}">
+            <sc-if value="{{ fDesk }}" hint-placeholder-val="{{ true }}">
+              <div style="position:sticky;top:0;height:0;flex:none;margin-bottom:-4px;pointer-events:none;z-index:6">
+                <div style="{{ vDotsSticky }}">
+                <div style="{{ vDotsWrap }}">
+                  <sc-for list="{{ vDots }}" as="d" hint-placeholder-count="8">
+                    <button onClick="{{ d.pick }}" aria-label="{{ d.label }}" style="width:18px;height:16px;padding:0;border:0;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer"><span style="{{ d.dot }}"></span></button>
+                  </sc-for>
+                </div>
+              </div>
+              </div>
+            </sc-if>
+            <sc-for list="{{ fSlides }}" as="r" hint-placeholder-count="6">
+              <div data-fsec="1" style="{{ r.media }}">
+                <sc-if value="{{ r.single }}" hint-placeholder-val="{{ true }}">
+                  <img src="{{ r.src }}" alt="ChillFlex suit" style="{{ r.img }}">
+                </sc-if>
+                <sc-if value="{{ r.strip }}" hint-placeholder-val="{{ false }}">
+                  <div onScroll="{{ onHeroScroll }}" style="position:absolute;inset:0;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none">
+                    <sc-for list="{{ heroStrip }}" as="hs" hint-placeholder-count="4">
+                      <div style="flex:0 0 100%;height:100%;position:relative;overflow:hidden;scroll-snap-align:start">
+                        <img src="{{ hs.src }}" alt="ChillFlex suit" style="{{ hs.img }}">
+                      </div>
+                    </sc-for>
+                  </div>
+                  <div style="position:absolute;left:50%;bottom:14px;transform:translateX(-50%);display:flex;gap:6px;padding:6px 10px;border-radius:999px;background:rgba(250,248,245,.85);pointer-events:none">
+                    <sc-for list="{{ heroDots }}" as="d" hint-placeholder-count="4"><span style="{{ d }}"></span></sc-for>
+                  </div>
+                </sc-if>
+                {{ r.compare }}
+
+                <sc-if value="{{ r.cap }}">
+                  <div style="position:absolute;left:0;right:0;bottom:0;height:62%;background:linear-gradient(to top, rgba(12,16,28,.86), rgba(12,16,28,.55) 45%, rgba(12,16,28,0));pointer-events:none"></div>
+                  <div style="{{ r.capBox }}">
+                    <div style="{{ r.capHead }}">{{ r.head }}</div>
+                    <div style="font-size:15px;line-height:1.5;color:rgba(255,255,255,.92);max-width:440px;text-wrap:pretty">{{ r.body }}</div>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ r.pin }}">
+                  <div style="{{ r.pinDot }}">
+                    <span style="position:relative;display:flex">
+                      {{ ring }}
+                      <span style="width:30px;height:30px;border-radius:50%;background:#fff;color:oklch(0.22 0.015 260);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;box-shadow:0 2px 10px rgba(20,25,40,.3)">{{ r.n }}</span>
+                    </span>
+                  </div>
+                  <div style="{{ r.pinCard }}">
+                    {{ r.viz }}
+                    <div style="display:flex;flex-direction:column;gap:4px;min-width:0">
+                      <div style="font-size:17px;font-weight:600;letter-spacing:-.015em;line-height:1.2">{{ r.head }}</div>
+                      <div style="font-size:13px;line-height:1.45;color:oklch(0.40 0.012 260);text-wrap:pretty">{{ r.body }}</div>
+                    </div>
+                  </div>
+                </sc-if>
+
+                <sc-if value="{{ r.spec }}">
+                  <div style="{{ r.specBar }}">
+                    {{ r.viz }}
+                    <div style="display:flex;flex-direction:column;gap:6px;min-width:0;flex:1 1 0">
+                      <div style="{{ r.specName }}">{{ r.head }}</div>
+                      <div style="font-size:14px;line-height:1.45;color:oklch(0.42 0.012 260);text-wrap:pretty;max-width:480px">{{ r.body }}</div>
+                    </div>
+                  </div>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+          <div style="{{ fRight }}">
+            <div ref="{{ fInnerRef }}" style="{{ fCol }}">
+              <div style="display:flex;flex-direction:column;gap:6px">
+                <a href="#" style="align-self:flex-start;font-size:14px;font-weight:600;letter-spacing:.02em;color:oklch(0.22 0.015 260);text-decoration:underline;text-underline-offset:3px">Awearness Kenneth Cole</a>
+                <div style="{{ headStyle }}">ChillFlex Performance Suit</div>
+                <div style="display:flex;align-items:baseline;flex-wrap:wrap;gap:2px 10px;margin-top:2px"><span style="font-size:20px;font-weight:500">{{ priceLabel }}</span><s style="font-size:15px;color:oklch(0.45 0.012 260)">$329.99</s><span style="font-size:15px;font-weight:500;color:oklch(0.5 0.18 27)">Sale</span></div>
+              </div>
+
+              <sc-if value="{{ fShow }}" hint-placeholder-val="{{ true }}">
+                <div style="display:flex;flex-direction:column;gap:16px">
+                  <div style="display:flex;flex-direction:column;gap:4px">
+                    <div style="font-size:15px;font-weight:600;letter-spacing:-.01em">What's ChillFlex?</div>
+                    <div style="{{ fDescStyle }}">A performance suiting fabric designed to keep guys cool and warm for all of life’s occasions. The collection features <a href="https://www.thirtysevenfive.com/" target="_blank" rel="noopener" style="color:oklch(0.22 0.015 260);text-decoration:underline;text-underline-offset:2px">37.5 Technology</a> for body temperature regulation, stretch, and comfort by using 66/30/4 wool/poly/spandex.</div>
+                    <button onClick="{{ fDescToggle }}" style="align-self:flex-start;border:none;background:none;padding:0;cursor:pointer;font-size:13px;font-weight:600;color:oklch(0.22 0.015 260);text-decoration:underline;text-underline-offset:3px">{{ fDescLabel }}</button>
+                  </div>
+                  <div style="{{ tGrid }}">
+                    <sc-for list="{{ fIndex }}" as="x" hint-placeholder-count="4">
+                      <button data-tile="{{ x.key }}" onClick="{{ x.pick }}" onMouseEnter="{{ x.enter }}" onMouseLeave="{{ x.leave }}" aria-expanded="{{ x.on }}" style="{{ x.style }}">
+                        <span style="{{ x.inner }}">
+                          <span style="{{ x.front }}">
+                            {{ x.viz }}
+                            <span style="{{ x.label }}"><span>{{ x.l1 }}</span><span>{{ x.l2 }}</span></span>
+                          </span>
+                          <span style="{{ x.back }}">
+                            <span style="display:flex;align-items:center;justify-content:space-between;gap:8px">{{ x.vizS }}<span style="{{ x.close }}">✕</span></span>
+                            <span style="{{ x.nameS }}">{{ x.name }}</span>
+                            <span style="{{ x.headS }}">{{ x.head }}</span>
+                            <span style="{{ x.bodyS }}">{{ x.body }}</span>
+                          </span>
+                        </span>
+                      </button>
+                    </sc-for>
+                  </div>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ fShow }}" hint-placeholder-val="{{ true }}">
+                <div style="display:flex;flex-direction:column;gap:32px">
+                  <div style="display:flex;flex-direction:column;gap:10px">
+                    <div style="display:flex;gap:6px;font-size:13px"><span style="font-weight:600">Color</span><span style="color:oklch(0.45 0.012 260)">{{ fColorName }}</span></div>
+                    <div style="display:flex;flex-wrap:wrap;gap:10px">
+                      <sc-for list="{{ fColors }}" as="c" hint-placeholder-count="4">
+                        <button onClick="{{ c.pick }}" title="{{ c.name }}" style="{{ c.ring }}" style-hover="transform:scale(1.12) rotate(8deg)"><span style="{{ c.chip }}"></span></button>
+                      </sc-for>
+                    </div>
+                  </div>
+                  <button onClick="{{ openSize }}" style="height:52px;border-radius:4px;border:none;background:#001E56;color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s" style-hover="transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,30,86,.28)" style-active="transform:translateY(0) scale(.98);box-shadow:none">{{ fCta }}</button>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ fShow }}" hint-placeholder-val="{{ true }}">
+                <div style="display:flex;flex-direction:column;gap:14px">
+                  <div style="display:flex;gap:12px;align-items:flex-start">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="oklch(0.22 0.015 260)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M3 6h11v10H3z"></path><path d="M14 9h4l3 3v4h-7"></path><circle cx="7" cy="17.5" r="1.6"></circle><circle cx="17" cy="17.5" r="1.6"></circle></svg>
+                    <div style="font-size:14px;line-height:1.45;color:oklch(0.22 0.015 260)">Free delivery between Wed, Nov 11 to Fri, Nov 13.</div>
+                  </div>
+                  <div style="display:flex;gap:12px;align-items:flex-start">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="oklch(0.22 0.015 260)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M4 9V20h16V9"></path><path d="M3 4h18l-1 5H4z"></path><path d="M9 20v-6h6v6"></path></svg>
+                    <sc-if value="{{ fNoSize }}" hint-placeholder-val="{{ true }}">
+                      <div style="font-size:14px;line-height:1.45;color:oklch(0.22 0.015 260)"><span style="text-decoration:underline;text-underline-offset:3px">Select a size</span> to check availability for in-store pickup.</div>
+                    </sc-if>
+                    <sc-if value="{{ fHasSize }}" hint-placeholder-val="{{ false }}">
+                      <div style="font-size:14px;line-height:1.45;color:oklch(0.22 0.015 260)">Available for free pickup today at Union Square. <span style="text-decoration:underline;text-underline-offset:3px">Change store</span></div>
+                    </sc-if>
+                  </div>
+                  <div style="display:flex;align-items:center;justify-content:flex-start;flex-wrap:wrap;gap:6px;margin-top:10px;font-size:13px;color:oklch(0.45 0.012 260)">
+                    <span style="display:flex;align-items:center;gap:5px;padding:3px 8px;border-radius:4px;background:oklch(0.92 0.04 280);color:oklch(0.45 0.18 280);font-weight:500"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M3 12.6V4h8.6L21 13.4 12.4 22z"></path><circle cx="7.5" cy="8.5" r="1.6" fill="oklch(0.92 0.04 280)"></circle></svg>0% APR</span>
+                    <span>or as low as {{ affirmMo }}/mo with</span>
+                    <span style="font-weight:700;color:oklch(0.15 0.01 260);letter-spacing:-.02em">affirm</span>
+                    <span style="color:oklch(0.22 0.015 260);text-decoration:underline;text-underline-offset:3px;cursor:pointer">Learn more</span>
+                    </div>
+
+              </sc-if>
+              </div>
+
+              <sc-if value="{{ fShow }}" hint-placeholder-val="{{ true }}">
+                <div style="display:flex;flex-direction:column;border-top:1px solid oklch(0.9 0.006 80)">
+                  <sc-for list="{{ fAcc }}" as="ac" hint-placeholder-count="2">
+                    <div style="{{ ac.wrap }}">
+                      <button onClick="{{ ac.toggle }}" style="display:flex;align-items:center;justify-content:space-between;height:56px;padding:0;border:none;background:none;cursor:pointer;color:oklch(0.22 0.015 260);font-size:14px;font-weight:600">
+                        <span>{{ ac.t }}</span><span style="font-size:18px;font-weight:300">{{ ac.glyph }}</span>
+                      </button>
+                      <sc-if value="{{ ac.open }}">
+                        <div style="display:flex;flex-direction:column;gap:6px;padding:0 0 18px">
+                          <sc-for list="{{ ac.items }}" as="it"><div style="font-size:13.5px;line-height:1.5;color:oklch(0.42 0.012 260)">{{ it }}</div></sc-for>
+                        </div>
+                      </sc-if>
+                    </div>
+                  </sc-for>
+                </div>
+              </sc-if>
+            </div>
+          </div>
+
+          <div style="{{ szWrap }}">
+            <div onClick="{{ closeSize }}" style="{{ szScrim }}"></div>
+            <div style="{{ szPanel }}">
+              <sc-if value="{{ fMobile }}" hint-placeholder-val="{{ false }}"><div style="align-self:center;width:40px;height:4px;border-radius:2px;background:oklch(0.85 0.006 80);flex:none;margin-top:-6px"></div></sc-if>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex:none">
+                <div style="display:flex;flex-direction:column;gap:2px">
+                  <div style="font-size:18px;font-weight:600;letter-spacing:-.015em">Choose your sizes</div>
+                  <div style="font-size:13px;color:oklch(0.45 0.012 260)">Jacket and pants are sized separately.</div>
+                </div>
+                <button onClick="{{ closeSize }}" style="width:36px;height:36px;border-radius:50%;border:none;background:oklch(0.94 0.006 80);cursor:pointer;font-size:15px;color:oklch(0.22 0.015 260);flex:none">✕</button>
+              </div>
+              <div style="flex:1 1 auto;min-height:0;overflow-y:auto;display:flex;flex-direction:column;gap:14px;margin:0 -2px;padding:0 2px">
+                <div style="display:flex;flex-direction:column;gap:18px;padding:16px;border:1px solid oklch(0.9 0.006 80);border-radius:8px;background:#fff">
+                  <div style="display:flex;align-items:center;gap:12px">
+                    <button onClick="{{ pj.toggle }}" style="display:flex;align-items:center;gap:12px;flex:1;min-width:0;border:none;background:none;padding:0;cursor:pointer;color:oklch(0.22 0.015 260);text-align:left">
+                      <span style="{{ pj.box }}">{{ pj.check }}</span>
+                      <span style="{{ pj.wrap }}"><img src="assets/pdp-front.jpg" alt="" style="{{ pj.thumb }}"></span>
+                      <span style="display:flex;flex-direction:column;gap:2px;min-width:0">
+                        <span style="font-size:15px;font-weight:600">Jacket</span>
+                        <span style="font-size:12.5px;color:oklch(0.45 0.012 260)">{{ pj.sub }}</span>
+                      </span>
+                    </button>
+                    <span style="font-size:13px;color:oklch(0.22 0.015 260);text-decoration:underline;text-underline-offset:3px;cursor:pointer;flex:none">Size guide</span>
+                  </div>
+                  <sc-if value="{{ pj.on }}" hint-placeholder-val="{{ true }}">
+                <div style="display:flex;flex-direction:column;gap:10px">
+                  <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:13px;font-weight:600">Chest</span></div>
+                  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:6px">
+                    <sc-for list="{{ fChests }}" as="z"><button onClick="{{ z.pick }}" style="{{ z.style }}">{{ z.t }}</button></sc-for>
+                  </div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:10px">
+                  <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:13px;font-weight:600">Length</span></div>
+                  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px">
+                    <sc-for list="{{ fLens }}" as="z"><button onClick="{{ z.pick }}" style="{{ z.style }}">{{ z.t }}</button></sc-for>
+                  </div>
+                  </sc-if>
+                </div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:18px;padding:16px;border:1px solid oklch(0.9 0.006 80);border-radius:8px;background:#fff">
+                  <div style="display:flex;align-items:center;gap:12px">
+                    <button onClick="{{ pp.toggle }}" style="display:flex;align-items:center;gap:12px;flex:1;min-width:0;border:none;background:none;padding:0;cursor:pointer;color:oklch(0.22 0.015 260);text-align:left">
+                      <span style="{{ pp.box }}">{{ pp.check }}</span>
+                      <span style="{{ pp.wrap }}"><img src="assets/pdp-front.jpg" alt="" style="{{ pp.thumb }}"></span>
+                      <span style="display:flex;flex-direction:column;gap:2px;min-width:0">
+                        <span style="font-size:15px;font-weight:600">Pants</span>
+                        <span style="font-size:12.5px;color:oklch(0.45 0.012 260)">{{ pp.sub }}</span>
+                      </span>
+                    </button>
+                    
+                  </div>
+                  <sc-if value="{{ pp.on }}" hint-placeholder-val="{{ true }}">
+                <div style="display:flex;flex-direction:column;gap:10px">
+                  <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:13px;font-weight:600">Waist</span></div>
+                  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:6px">
+                    <sc-for list="{{ pWaists }}" as="z"><button onClick="{{ z.pick }}" style="{{ z.style }}">{{ z.t }}</button></sc-for>
+                  </div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:10px">
+                  <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:13px;font-weight:600">Inseam</span></div>
+                  <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px">
+                    <sc-for list="{{ pInseams }}" as="z"><button onClick="{{ z.pick }}" style="{{ z.style }}">{{ z.t }}</button></sc-for>
+                  </div>
+                  </sc-if>
+                </div>
+                </div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:10px;flex:none;padding-top:16px;border-top:1px solid oklch(0.9 0.006 80)">
+                <div style="display:flex;justify-content:space-between;font-size:14px"><span style="color:oklch(0.45 0.012 260)">Total</span><span style="font-weight:600">{{ priceLabel }}</span></div>
+                <button onClick="{{ addToBag }}" style="{{ szCta }}" style-hover="transform:translateY(-2px)" style-active="transform:scale(.98)">{{ szCtaLabel }}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section aria-labelledby="ptm-title" style="{{ ptmWrap }}">
+          <div style="{{ ptmHead }}">
+            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px 24px">
+              <h2 id="ptm-title" style="{{ ptmTitle }}">Like this one? See it in a premium fabric</h2>
+              <sc-if value="{{ fDesk }}" hint-placeholder-val="{{ true }}"><a href="#" style="display:flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:4px;border:1px solid #001E56;color:#001E56;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;transition:transform .25s cubic-bezier(.2,.8,.2,1), background .2s, color .2s, box-shadow .25s" style-hover="background:#001E56;color:#fff;transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,30,86,.22)">Shop Navy Suits</a></sc-if>
+            </div>
+          </div>
+          <div ref="{{ ptmRef }}" onScroll="{{ ptmScroll }}" aria-label="Price levels" style="{{ ptmTrack }}">
+            <sc-for list="{{ ptmCards }}" as="c" hint-placeholder-count="3">
+              <article onClick="{{ c.pick }}" onMouseEnter="{{ c.enter }}" onMouseLeave="{{ c.leave }}" style="{{ c.card }}">
+                <div style="{{ c.media }}">
+                  <img src="{{ c.img }}" alt="{{ c.alt }}" loading="lazy" style="{{ c.imgStyle }}">
+                  <div style="position:absolute;top:10px;left:10px;right:10px;display:flex;flex-wrap:wrap;gap:6px">
+                    <sc-for list="{{ c.badges }}" as="b"><span style="{{ b.style }}">{{ b.t }}</span></sc-for>
+                  </div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:20px;padding:20px 12px 12px;flex:1">
+                  <div style="display:flex;flex-direction:column;gap:6px">
+                    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px;min-width:0">
+  <a href="{{ c.href }}" style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:oklch(0.45 0.012 260);text-decoration:none;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" style-hover="text-decoration:underline">{{ c.brand }}</a>
+                      <sc-if value="{{ c.onSale }}"><span style="flex:none;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:oklch(0.5 0.18 27)">Sale</span></sc-if>
+                    </div>
+                    <p style="margin:0;display:flex;white-space:nowrap;align-items:baseline;gap:8px">
+                      <span style="font-size:20px;font-weight:500;letter-spacing:-.01em">{{ c.now }}</span>
+                      <sc-if value="{{ c.onSale }}"><s style="font-size:14px;color:oklch(0.45 0.012 260)">{{ c.was }}</s></sc-if>
+                    </p>
+                  </div>
+                  <div style="display:flex;flex-direction:column;gap:10px;padding-top:20px;border-top:1px solid oklch(0.88 0.006 80)">
+                    <span style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:oklch(0.45 0.012 260)">Fabric</span>
+                    <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:14px;line-height:1.4">
+                      <sc-for list="{{ c.fibers }}" as="fb"><li style="display:flex;gap:10px"><span style="min-width:36px;font-weight:500">{{ fb.p }}</span><span style="color:oklch(0.45 0.012 260)">{{ fb.n }}</span></li></sc-for>
+                    </ul>
+                  </div>
+                  <p style="margin:auto 0 0;padding:14px 16px;border-radius:8px;background:oklch(0.985 0.004 80);font-size:13px;line-height:1.5;color:oklch(0.45 0.012 260);text-wrap:pretty"><span style="font-weight:600;color:oklch(0.22 0.015 260)">{{ c.noteHead }}</span> {{ c.note }}</p>
+                </div>
+              </article>
+            </sc-for>
+          </div>
+          <sc-if value="{{ fMobile }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;justify-content:center;margin-top:-8px">
+              <sc-for list="{{ ptmDots }}" as="d" hint-placeholder-count="3">
+                <button onClick="{{ d.pick }}" aria-label="{{ d.label }}" style="width:32px;height:44px;padding:0;border:0;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer"><span style="{{ d.dot }}"></span></button>
+              </sc-for>
+            </div>
+          </sc-if>
+          <sc-if value="{{ fMobile }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;justify-content:center;padding:0 16px"><a href="#" style="display:flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:4px;border:1px solid #001E56;color:#001E56;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;transition:transform .25s cubic-bezier(.2,.8,.2,1), background .2s, color .2s, box-shadow .25s" style-hover="background:#001E56;color:#fff;transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,30,86,.22)">Shop Navy Suits</a></div>
+          </sc-if>
+        </section>
+          <sc-if value="{{ fMobile }}" hint-placeholder-val="{{ false }}">
+            <div style="position:sticky;bottom:0;z-index:6;display:flex;align-items:center;gap:12px;padding:12px 20px;background:rgba(250,248,245,.96);backdrop-filter:blur(10px);border-top:1px solid oklch(0.9 0.006 80)">
+              <div style="display:flex;flex-direction:column;min-width:0;flex:1">
+                <div style="font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">ChillFlex Performance Suit</div>
+                <div style="font-size:13px;color:oklch(0.45 0.012 260)">{{ priceLabel }}</div>
+              </div>
+              <button style="height:44px;padding:0 20px;border-radius:4px;border:none;background:#001E56;color:#fff;font-size:14px;font-weight:600;cursor:pointer;flex:none;transition:transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s" style-hover="transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,30,86,.28)" style-active="transform:translateY(0) scale(.98);box-shadow:none" onClick="{{ openSize }}">{{ fCta }}</button>
+            </div>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <!-- E · HOTSPOTS + STORY -->
+      <sc-if value="{{ isE }}" hint-placeholder-val="{{ false }}">
+        <div style="{{ eWrap }}">
+          <div style="{{ eLeft }}">
+            <sc-for list="{{ eRows }}" as="r" hint-placeholder-count="5">
+              <div data-sec="1" style="{{ r.media }}">
+                <div style="{{ r.box }}">
+                  <img src="{{ r.src }}" alt="ChillFlex suit" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+                </div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="{{ eRight }}">
+            <div style="{{ eBuy }}">
+              <div style="display:flex;flex-direction:column;gap:4px">
+                <div style="font-size:12px;color:oklch(0.48 0.012 260)">Suits / Performance</div>
+                <div style="{{ headStyle }}">ChillFlex Performance Suit</div>
+                <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">
+                  <div style="font-size:20px;font-weight:500">{{ priceLabel }}</div>
+                  <div style="font-size:14px;color:oklch(0.45 0.012 260)">Modern fit · Blue</div>
+                </div>
+              </div>
+              <sc-if value="{{ eShowSizes }}" hint-placeholder-val="{{ true }}">
+                <div style="display:flex;flex-wrap:wrap;gap:6px">
+                  <sc-for list="{{ sizes }}" as="z" hint-placeholder-count="6">
+                    <button onClick="{{ z.pick }}" style="{{ z.style }}">{{ z.t }}</button>
+                  </sc-for>
+                </div>
+              </sc-if>
+              <button style="height:50px;border-radius:999px;border:none;background:oklch(0.22 0.015 260);color:#fff;font-size:15px;font-weight:600;cursor:pointer">Add to bag</button>
+            </div>
+            <div style="{{ eStage }}">
+              <div style="{{ eIntro }}">
+                <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:oklch(0.40 0.09 258)">Why it's worth it</div>
+                <div style="font-size:15px;line-height:1.5;color:oklch(0.40 0.012 260);max-width:380px">Four technologies in one suit. Scroll to see each one ↓</div>
+              </div>
+              <sc-for list="{{ eCards }}" as="fc" hint-placeholder-count="4">
+                <div style="{{ fc.style }}">
+                  {{ fc.viz }}
+                  <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:oklch(0.40 0.09 258)">{{ fc.eyebrow }}</div>
+                  <div style="{{ featHead }}">{{ fc.head }}</div>
+                  <div style="{{ eBodyStyle }}">{{ fc.body }}</div>
+                  <div style="font-size:13px;font-weight:500;color:oklch(0.45 0.012 260)">{{ fc.proof }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- A · HOTSPOTS -->
+      <sc-if value="{{ isA }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-wrap:wrap;gap:32px 48px;padding:24px clamp(16px,4vw,48px) 64px;align-items:flex-start">
+          <div style="flex:1 1 480px;min-width:0;max-width:640px;display:flex;flex-direction:column;gap:12px">
+            <div style="{{ mediaStyle }}">
+              <img src="{{ cur.src }}" alt="ChillFlex suit" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+              <button onClick="{{ toggleSpots }}" style="position:absolute;top:14px;left:14px;z-index:4;display:flex;align-items:center;gap:8px;padding:8px 14px 8px 8px;border-radius:999px;border:none;background:rgba(250,248,245,.92);backdrop-filter:blur(8px);font-size:13px;font-weight:500;cursor:pointer;color:oklch(0.22 0.015 260)">
+                <span style="{{ toggleTrack }}"><span style="{{ toggleKnob }}"></span></span>
+                <span>Features</span>
+              </button>
+              <sc-for list="{{ spots }}" as="s" hint-placeholder-count="3">
+                <button onClick="{{ s.pick }}" style="{{ s.style }}">
+                  <span style="position:relative;display:flex">
+                    {{ ring }}
+                    <sc-if value="{{ s.numbered }}"><span style="{{ s.dotStyle }}">{{ s.n }}</span></sc-if>
+                    <sc-if value="{{ s.plus }}"><span style="{{ s.dotStyle }}"><span style="font-size:20px;font-weight:300;line-height:1">{{ s.plusGlyph }}</span></span></sc-if>
+                    <sc-if value="{{ s.label }}"><span style="{{ s.pillStyle }}"><span style="width:8px;height:8px;border-radius:50%;background:currentColor"></span>{{ s.name }}</span></sc-if>
+                  </span>
+                </button>
+              </sc-for>
+              <sc-if value="{{ hasSelA }}" hint-placeholder-val="{{ false }}">
+                <div style="position:absolute;left:14px;right:14px;bottom:14px;z-index:5;max-width:420px;background:rgba(250,248,245,.96);backdrop-filter:blur(12px);border-radius:18px;padding:16px;display:flex;gap:14px;align-items:flex-start;box-shadow:0 10px 30px rgba(20,25,40,.18)">
+                  {{ selA.viz }}
+                  <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:4px">
+                    <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:oklch(0.40 0.09 258)">{{ selA.name }}</div>
+                    <div style="font-size:18px;font-weight:600;letter-spacing:-.015em;line-height:1.2">{{ selA.head }}</div>
+                    <div style="font-size:13.5px;line-height:1.45;color:oklch(0.40 0.012 260);text-wrap:pretty">{{ selA.body }}</div>
+                  </div>
+                  <button onClick="{{ clearSel }}" style="border:none;background:oklch(0.92 0.006 80);width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:14px;color:oklch(0.3 0.01 260);flex:none">✕</button>
+                </div>
+              </sc-if>
+            </div>
+            <div style="display:flex;gap:8px">
+              <sc-for list="{{ thumbs }}" as="t" hint-placeholder-count="4">
+                <button onClick="{{ t.pick }}" style="{{ t.style }}"><img src="{{ t.src }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></button>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="flex:1 1 320px;min-width:0;max-width:440px;display:flex;flex-direction:column;gap:20px">
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <div style="font-size:12px;color:oklch(0.48 0.012 260)">Suits / Performance</div>
+              <h1 style="margin:0;font-size:28px;font-weight:600;letter-spacing:-.025em;line-height:1.1">ChillFlex Performance Suit</h1>
+              <div style="font-size:15px;color:oklch(0.42 0.012 260)">Modern fit · Blue</div>
+              <div style="font-size:20px;font-weight:500;margin-top:4px">{{ priceLabel }}</div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="font-size:13px;font-weight:600">Why it's worth it</div>
+              <div style="display:flex;flex-direction:column;border-top:1px solid oklch(0.9 0.006 80)">
+                <sc-for list="{{ rowsA }}" as="f" hint-placeholder-count="4">
+                  <button onClick="{{ f.pick }}" style="{{ f.rowStyle }}">
+                    <span style="{{ f.numStyle }}">{{ f.n }}</span>
+                    <span style="display:flex;flex-direction:column;gap:2px;text-align:left">
+                      <span style="font-size:14px;font-weight:600">{{ f.name }}</span>
+                      <span style="font-size:13px;color:oklch(0.45 0.012 260)">{{ f.head }}</span>
+                    </span>
+                  </button>
+                </sc-for>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="font-size:13px;font-weight:600">Size</div>
+              <div style="display:flex;flex-wrap:wrap;gap:6px">
+                <sc-for list="{{ sizes }}" as="z" hint-placeholder-count="6">
+                  <button onClick="{{ z.pick }}" style="{{ z.style }}">{{ z.t }}</button>
+                </sc-for>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <button style="height:52px;border-radius:999px;border:none;background:oklch(0.22 0.015 260);color:#fff;font-size:15px;font-weight:600;cursor:pointer">Add to bag</button>
+              <button style="height:52px;border-radius:999px;border:1px solid oklch(0.22 0.015 260);background:transparent;color:oklch(0.22 0.015 260);font-size:15px;font-weight:600;cursor:pointer">Feel it in store · Book a fitting</button>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- B · 3D -->
+      <sc-if value="{{ isB }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-wrap:wrap;gap:32px 48px;padding:24px clamp(16px,4vw,48px) 64px;align-items:flex-start">
+          <div style="flex:1 1 480px;min-width:0;max-width:680px;display:flex;flex-direction:column;gap:12px">
+            <div style="position:relative;width:100%;aspect-ratio:4 / 5;max-height:720px;border-radius:16px;overflow:hidden;background:oklch(0.93 0.012 75)">
+              <div ref="{{ threeRef }}" style="position:absolute;inset:0;cursor:grab;touch-action:pan-y"></div>
+              <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2"><line data-leader="1" x1="0" y1="0" x2="0" y2="0" stroke="oklch(0.22 0.015 260)" stroke-width="1" opacity="0"></line></svg>
+              <sc-for list="{{ hs3d }}" as="h" hint-placeholder-count="4">
+                <button data-hs3d="{{ h.id }}" onClick="{{ h.pick }}" style="position:absolute;left:0;top:0;transform:translate(-50%,-50%);z-index:3;border:none;background:none;padding:0;cursor:pointer;opacity:0;transition:opacity .25s">
+                  <span style="position:relative;display:flex">
+                    {{ ring }}
+                    <span style="{{ h.dotStyle }}">{{ h.n }}</span>
+                  </span>
+                </button>
+              </sc-for>
+              <div style="position:absolute;top:14px;left:14px;z-index:4;display:flex;gap:6px;flex-wrap:wrap">
+                <div style="padding:7px 12px;border-radius:999px;background:rgba(250,248,245,.9);font-size:12px;font-weight:500">3D · Drag to rotate</div>
+                <sc-if value="{{ hasSel3d }}" hint-placeholder-val="{{ false }}"><button onClick="{{ reset3d }}" style="padding:7px 12px;border-radius:999px;border:none;background:oklch(0.22 0.015 260);color:#fff;font-size:12px;font-weight:500;cursor:pointer">Reset view</button></sc-if>
+              </div>
+              <sc-if value="{{ hasSel3d }}" hint-placeholder-val="{{ false }}">
+                <div data-card3d="1" style="position:absolute;left:14px;right:14px;bottom:14px;z-index:5;max-width:380px;background:rgba(250,248,245,.96);backdrop-filter:blur(12px);border-radius:18px;padding:16px;display:flex;gap:14px;align-items:flex-start;box-shadow:0 10px 30px rgba(20,25,40,.18)">
+                  {{ sel3dF.viz }}
+                  <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:4px">
+                    <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:oklch(0.40 0.09 258)">{{ sel3dF.name }}</div>
+                    <div style="font-size:18px;font-weight:600;letter-spacing:-.015em;line-height:1.2">{{ sel3dF.head }}</div>
+                    <div style="font-size:13.5px;line-height:1.45;color:oklch(0.40 0.012 260);text-wrap:pretty">{{ sel3dF.body }}</div>
+                    <div style="font-size:12px;color:oklch(0.40 0.09 258);font-weight:500;margin-top:4px">{{ sel3dF.demo }}</div>
+                  </div>
+                </div>
+              </sc-if>
+            </div>
+          </div>
+          <div style="flex:1 1 320px;min-width:0;max-width:440px;display:flex;flex-direction:column;gap:20px">
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <div style="font-size:12px;color:oklch(0.48 0.012 260)">Suits / Performance</div>
+              <h1 style="margin:0;font-size:28px;font-weight:600;letter-spacing:-.025em;line-height:1.1">ChillFlex Performance Suit</h1>
+              <div style="font-size:15px;color:oklch(0.42 0.012 260)">Modern fit · Blue</div>
+              <div style="font-size:20px;font-weight:500;margin-top:4px">{{ priceLabel }}</div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="font-size:13px;font-weight:600">See it work</div>
+              <div style="display:flex;flex-direction:column;border-top:1px solid oklch(0.9 0.006 80)">
+                <sc-for list="{{ rowsB }}" as="f" hint-placeholder-count="4">
+                  <button onClick="{{ f.pick }}" style="{{ f.rowStyle }}">
+                    <span style="{{ f.numStyle }}">{{ f.n }}</span>
+                    <span style="display:flex;flex-direction:column;gap:2px;text-align:left">
+                      <span style="font-size:14px;font-weight:600">{{ f.name }}</span>
+                      <span style="font-size:13px;color:oklch(0.45 0.012 260)">{{ f.head }}</span>
+                    </span>
+                  </button>
+                </sc-for>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <button style="height:52px;border-radius:999px;border:none;background:oklch(0.22 0.015 260);color:#fff;font-size:15px;font-weight:600;cursor:pointer">Add to bag</button>
+              <button style="height:52px;border-radius:999px;border:1px solid oklch(0.22 0.015 260);background:transparent;color:oklch(0.22 0.015 260);font-size:15px;font-weight:600;cursor:pointer">Feel it in store · Book a fitting</button>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- C · SCROLL STORY -->
+      <sc-if value="{{ isC }}" hint-placeholder-val="{{ false }}">
+        <div ref="{{ storyRef }}" style="{{ storyWrap }}">
+          <div style="{{ stickyStyle }}">
+            <div style="{{ imgPane }}">
+              <sc-for list="{{ storyImgs }}" as="im" hint-placeholder-count="4">
+                <img src="{{ im.src }}" alt="" style="{{ im.style }}">
+              </sc-for>
+              <div style="position:absolute;right:16px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:8px;z-index:3">
+                <sc-for list="{{ progress }}" as="pg" hint-placeholder-count="5"><span style="{{ pg }}"></span></sc-for>
+              </div>
+            </div>
+            <div style="{{ textPane }}">
+              <div style="{{ buyBox }}">
+                <div style="display:flex;flex-direction:column;gap:4px">
+                  <div style="font-size:12px;color:oklch(0.48 0.012 260)">Suits / Performance</div>
+                  <div style="{{ headStyle }}">ChillFlex Performance Suit</div>
+                  <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">
+                    <div style="font-size:20px;font-weight:500">{{ priceLabel }}</div>
+                    <div style="font-size:14px;color:oklch(0.45 0.012 260)">Modern fit · Blue</div>
+                  </div>
+                </div>
+                <div style="display:flex;flex-wrap:wrap;gap:6px">
+                  <sc-for list="{{ sizes }}" as="z" hint-placeholder-count="6">
+                    <button onClick="{{ z.pick }}" style="{{ z.style }}">{{ z.t }}</button>
+                  </sc-for>
+                </div>
+                <button style="height:50px;border-radius:999px;border:none;background:oklch(0.22 0.015 260);color:#fff;font-size:15px;font-weight:600;cursor:pointer">Add to bag</button>
+              </div>
+              <div style="position:relative;flex:1 0 auto;min-height:320px">
+                <div style="{{ introStyle }}">
+                  <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:oklch(0.40 0.09 258)">Why it's worth it</div>
+                  <div style="font-size:15px;line-height:1.5;color:oklch(0.40 0.012 260);max-width:380px">Four technologies in one suit. Scroll to see each one ↓</div>
+                </div>
+                <sc-for list="{{ featCards }}" as="fc" hint-placeholder-count="4">
+                  <div style="{{ fc.style }}">
+                    {{ fc.viz }}
+                    <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:oklch(0.40 0.09 258)">{{ fc.eyebrow }}</div>
+                    <div style="{{ featHead }}">{{ fc.head }}</div>
+                    <div style="font-size:15px;line-height:1.5;color:oklch(0.40 0.012 260);max-width:400px;text-wrap:pretty">{{ fc.body }}</div>
+                    <div style="font-size:13px;font-weight:500;color:oklch(0.45 0.012 260)">{{ fc.proof }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+
+      <!-- D · VALUE -->
+      <sc-if value="{{ isD }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:56px;padding:24px clamp(16px,4vw,48px) 72px">
+          <div style="display:flex;flex-wrap:wrap;gap:28px 48px;align-items:center">
+            <div style="flex:1 1 440px;min-width:0;aspect-ratio:1800 / 1440;border-radius:16px;overflow:hidden;background:oklch(0.9 0.015 75)"><img src="assets/seated.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+            <div style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:12px">
+              <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:oklch(0.40 0.09 258)">ChillFlex Performance Suit</div>
+              <h1 style="margin:0;font-size:clamp(30px,4vw,44px);font-weight:600;letter-spacing:-.03em;line-height:1.05;text-wrap:balance">Built to be worn. A lot.</h1>
+              <div style="font-size:15px;line-height:1.5;color:oklch(0.40 0.012 260);text-wrap:pretty;max-width:400px">The suit you reach for on Monday, the flight on Thursday and the wedding on Saturday. The more you wear it, the less it costs.</div>
+              <div style="font-size:20px;font-weight:500">{{ priceLabel }}</div>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-wrap:wrap;gap:28px 48px;background:#fff;border-radius:24px;padding:clamp(20px,4vw,40px);border:1px solid oklch(0.9 0.006 80)">
+            <div style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:20px">
+              <div style="display:flex;flex-direction:column;gap:6px">
+                <div style="font-size:22px;font-weight:600;letter-spacing:-.02em">What it really costs</div>
+                <div style="font-size:14px;color:oklch(0.45 0.012 260)">Tell us how you'll wear it.</div>
+              </div>
+              <label style="display:flex;flex-direction:column;gap:8px">
+                <span style="display:flex;justify-content:space-between;font-size:14px"><span>Wears per month</span><span style="font-weight:600">{{ wears }}</span></span>
+                <input type="range" min="1" max="20" value="{{ wears }}" onChange="{{ setWears }}" style="width:100%;accent-color:oklch(0.40 0.09 258)">
+              </label>
+              <label style="display:flex;flex-direction:column;gap:8px">
+                <span style="display:flex;justify-content:space-between;font-size:14px"><span>Years in rotation</span><span style="font-weight:600">{{ years }}</span></span>
+                <input type="range" min="1" max="6" value="{{ years }}" onChange="{{ setYears }}" style="width:100%;accent-color:oklch(0.40 0.09 258)">
+              </label>
+            </div>
+            <div style="flex:1 1 280px;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:8px;padding:24px;border-radius:18px;background:oklch(0.96 0.008 80)">
+              <div style="font-size:13px;color:oklch(0.45 0.012 260)">{{ priceLabel }} ÷ {{ totalWears }} wears</div>
+              <div style="display:flex;align-items:baseline;gap:8px"><span style="font-size:clamp(48px,7vw,72px);font-weight:600;letter-spacing:-.04em;line-height:1">{{ cpw }}</span><span style="font-size:16px;color:oklch(0.45 0.012 260)">per wear</span></div>
+              <div style="font-size:15px;font-weight:500;color:oklch(0.40 0.09 258)">{{ cpwLine }}</div>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:20px">
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <div style="font-size:22px;font-weight:600;letter-spacing:-.02em">One suit, 7 a.m. to midnight.</div>
+              <div style="font-size:14px;color:oklch(0.45 0.012 260)">Tap a moment to see which technology is working.</div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px">
+              <sc-for list="{{ stops }}" as="s" hint-placeholder-count="4">
+                <button onClick="{{ s.pick }}" style="{{ s.style }}">
+                  <div style="height:90px;display:flex;align-items:flex-end;width:100%"><div style="{{ s.bar }}"></div></div>
+                  <div style="font-size:12px;font-weight:600">{{ s.t }}</div>
+                  <div style="font-size:12px;color:oklch(0.45 0.012 260)">{{ s.place }} · {{ s.temp }}°</div>
+                </button>
+              </sc-for>
+            </div>
+            <div style="display:flex;gap:16px;align-items:center;padding:20px;border-radius:18px;background:#fff;border:1px solid oklch(0.9 0.006 80)">
+              {{ stop.viz }}
+              <div style="display:flex;flex-direction:column;gap:4px;min-width:0">
+                <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:oklch(0.40 0.09 258)">{{ stop.fname }}</div>
+                <div style="font-size:17px;font-weight:600;letter-spacing:-.01em">{{ stop.line }}</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-wrap:wrap;gap:20px 32px;align-items:center;justify-content:space-between;background:oklch(0.30 0.06 258);color:#fff;border-radius:24px;padding:clamp(24px,4vw,40px)">
+            <div style="display:flex;flex-direction:column;gap:6px;max-width:460px">
+              <div style="font-size:24px;font-weight:600;letter-spacing:-.02em">Feel the stretch before you buy.</div>
+              <div style="font-size:15px;line-height:1.5;color:oklch(0.9 0.02 258)">Book a fitting and a stylist will walk you through every detail, then tailor it to you.</div>
+            </div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <button style="height:50px;padding:0 24px;border-radius:999px;border:none;background:#fff;color:oklch(0.22 0.015 260);font-size:15px;font-weight:600;cursor:pointer">Book a fitting</button>
+              <button style="height:50px;padding:0 24px;border-radius:999px;border:1px solid rgba(255,255,255,.6);background:transparent;color:#fff;font-size:15px;font-weight:600;cursor:pointer">Add to bag</button>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;startConcept&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;F · Embedded features&quot;,&quot;E · Hotspots + story&quot;,&quot;A · Hotspots&quot;,&quot;B · 3D&quot;,&quot;C · Story&quot;,&quot;D · Value&quot;],&quot;default&quot;:&quot;F · Embedded features&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;hotspotStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Numbered&quot;,&quot;Plus&quot;,&quot;Label&quot;],&quot;default&quot;:&quot;Numbered&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Concept A&quot;},&quot;price&quot;:{&quot;editor&quot;:&quot;float&quot;,&quot;default&quot;:230,&quot;min&quot;:99,&quot;max&quot;:1200,&quot;step&quot;:10,&quot;unit&quot;:&quot;$&quot;,&quot;tsType&quot;:&quot;number&quot;}}">
+const INK='oklch(0.22 0.015 260)', NAVY='oklch(0.40 0.09 258)', LINE='oklch(0.9 0.006 80)';
+const FEATURES=[
+ {id:'stretch',n:1,name:'4-Way Stretch',head:'Moves the way you do.',body:'Stretch runs across and along the weave, so reaching, sitting and stepping never pull at the seams.',proof:'Wool · polyester · spandex',demo:'Watch the arm reach and the leg step.'},
+ {id:'temp',n:2,name:'37.5® Technology',head:'Cool when it’s hot. Warm when it’s not.',body:'Active particles in the fiber capture and release moisture vapor, helping hold you in your comfort zone.',proof:'Temperature-regulating fibers',demo:'Moisture vapor released at the chest.'},
+ {id:'lining',n:3,name:'Breathable Lining',head:'Heat out. Comfort in.',body:'A lightweight lining and breathable shell let heat escape instead of building up through a long day.',proof:'Lightweight, breathable blend',demo:'Shell made see-through to show the lining.'},
+ {id:'wrinkle',n:4,name:'Wrinkle Resistant',head:'Sit for hours. Stand up sharp.',body:'The blend recovers its shape: car seat, overhead bin, dinner table.',proof:'Travel-ready recovery',demo:'Trouser leg in focus.'}
+];
+const GALLERY=[
+ {src:'assets/studio-standing.jpg',ar:'1440 / 1800',spots:[{f:'stretch',x:69,y:31},{f:'temp',x:53,y:40},{f:'wrinkle',x:52,y:88}]},
+ {src:'assets/flat-suit.jpg',ar:'921 / 1152',spots:[{f:'lining',x:49,y:24},{f:'stretch',x:33,y:16},{f:'temp',x:62,y:30},{f:'wrinkle',x:55,y:72}]},
+ {src:'assets/seated.jpg',ar:'1800 / 1440',spots:[{f:'stretch',x:33,y:50},{f:'temp',x:80,y:50},{f:'wrinkle',x:72,y:80}]},
+ {src:'assets/leaning.jpg',ar:'1440 / 1800',spots:[{f:'temp',x:50,y:33},{f:'wrinkle',x:58,y:53},{f:'stretch',x:41,y:70}]}
+];
+const CHAPTERS=[
+ {src:'assets/studio-standing.jpg',s:1,o:'55% 35%',eyebrow:'Suits / Performance',head:'ChillFlex Performance Suit',body:'Modern fit · Blue',buy:true},
+ {src:'assets/leaning.jpg',s:2.1,o:'42% 70%',f:'stretch'},
+ {src:'assets/studio-standing.jpg',s:2.4,o:'53% 40%',f:'temp'},
+ {src:'assets/flat-suit.jpg',s:2.2,o:'49% 22%',f:'lining'},
+ {src:'assets/seated.jpg',s:1.4,o:'40% 55%',f:'wrinkle'}
+];
+const STOPS=[
+ {t:'7:40 AM',place:'Commute',temp:84,f:'lining',line:'Packed train, humid platform. Heat escapes; you arrive dry.'},
+ {t:'10:00 AM',place:'Boardroom',temp:66,f:'temp',line:'The A/C kicks in. You stay comfortable.'},
+ {t:'1:30 PM',place:'Cross-town',temp:78,f:'wrinkle',line:'Forty minutes in a car seat. Step out sharp.'},
+ {t:'8:00 PM',place:'Dinner',temp:72,f:'stretch',line:'Reach, toast, dance. Nothing pulls.'}
+];
+const FOCUS={none:{y:-0.2,z:9.6,ly:-0.25},stretch:{rot:-0.75,y:0.6,z:6.2,ly:0.4},temp:{rot:0.2,y:1.05,z:5,ly:0.95},lining:{rot:0.35,y:0.6,z:6.4,ly:0.5},wrinkle:{rot:-0.3,y:-1.2,z:5.6,ly:-1.35}};
+const EC=[{img:0,s:1},{img:3,f:'stretch',s:2},{img:0,f:'temp',s:2.2},{img:1,f:'lining',s:2.1},{img:2,f:'wrinkle',s:1.7}];
+const FS=[{src:'assets/pdp-front.jpg',fit:true,op:'50% 30%'},{src:'assets/pdp-back.jpg',fit:true,gal:true,op:'50% 30%'},{src:'assets/pdp-sleeve.jpg',gal:true},{src:'assets/pdp-lapel.jpg',gal:true},{src:'assets/fabric.jpg',gal:true},{src:'assets/warm.jpg',f:'temp',s:1,ax:58,ay:42,op:'62% 40%',compare:true,src2:'assets/cold2.jpg'},{src:'assets/dancing2.jpg',f:'stretch',s:1.22,ax:51,ay:45,ox:51,oy:100,op:'51% 50%'},{src:'assets/lining-open.jpg',f:'lining',s:1,ax:37,ay:42,op:'50% 0%'},{src:'assets/seated-full.jpg',f:'wrinkle',s:1.35,ax:44,ay:52,ox:47,oy:100,op:'47% 50%'}];
+const FX={temp:{id:'temp',n:2,tile:'Cooling & Warming',name:'37.5® Technology',head:'Cool when it’s hot. Warm when it’s not.',body:'37.5® Technology uses active particles in the fiber to release moisture vapor in the heat and hold on to body heat in the cold.',proof:'Temperature-regulating fibers'}};
+const FVARS=[{k:'caption',l:'F1',t:'Caption'},{k:'pin',l:'F2',t:'Pinned callout'},{k:'spec',l:'F3',t:'Spec sheet'}];
+const CONCEPTS=[
+ {k:'F',t:'Embedded features',why:'E, but each feature sits in its own photo and scrolls with it, with nothing animating. Use the switcher to compare three treatments: F1 caption over a scrim, F2 a pinned callout on the feature itself, F3 a Rivian-style spec sheet.'},
+ {k:'E',t:'Hotspots + story',why:'A and C combined. Images stack and scroll on the left. The buy box stays fixed on the right, and below it each feature fades in place as its image scrolls into view. Once the buy box scrolls away, a compact name, price and Add to bag bar stays pinned at the top.'},
+ {k:'A',t:'Image hotspots',why:'Rivian/Apple-style hotspots on existing photography. Each dot opens a one-line benefit with a micro-animation. Lowest lift: works with today’s shoots.'},
+ {k:'B',t:'3D suit',why:'An interactive 3D suit (Apple AR / Rivian configurator). Drag to rotate; tapping a feature moves the camera and shows the tech working on the garment.'},
+ {k:'C',t:'Scroll story',why:'Oura-style scroll story. Each scroll step zooms into one benefit, so the shopper hears the “why” before the price. Built for the shopper who researches online.'},
+ {k:'D',t:'Value & cost-per-wear',why:'Shows the price as cost per wear and as a day of real use, then ends with an in-store fitting, where the Stylist prefers to buy.'}
+];
+function viz(id,size,play){
+  const ps=play===false?'paused':'running', h=React.createElement, box={width:size,height:size,borderRadius:size*0.22,background:'oklch(0.94 0.008 80)',position:'relative',overflow:'hidden',flex:'none',display:'flex',alignItems:'center',justifyContent:'center'};
+  if(id==='stretch') return h('div',{style:box},h('div',{style:{width:'46%',height:'46%',borderRadius:4,background:`repeating-linear-gradient(45deg, ${NAVY} 0 3px, oklch(0.52 0.09 258) 3px 6px)`,animation:'mwStretch 2.4s ease-in-out infinite',animationPlayState:ps}}));
+  if(id==='temp'||id==='cool'||id==='warm') return h('div',{style:id==='temp'?box:{...box,background:id==='cool'?'oklch(0.93 0.035 230)':'oklch(0.93 0.04 60)'}},
+    h('div',{style:{position:'absolute',left:'14%',right:'14%',top:'50%',height:Math.max(4,size*0.08),transform:'translateY(-50%)',borderRadius:9,background:'linear-gradient(90deg, oklch(0.72 0.12 230), oklch(0.92 0.03 95), oklch(0.72 0.14 50))'}}),
+    h('div',{style:{position:'absolute',left:'50%',top:'30%',bottom:'30%',width:2,marginLeft:-1,background:INK}}),
+    h('div',{style:{position:'absolute',top:'50%',width:size*.14,height:size*.14,borderRadius:'50%',background:'#fff',border:`2px solid ${INK}`,transform:'translate(-50%,-50%)',animation:'mwSwing 3.2s ease-in-out infinite',animationPlayState:ps}}));
+  if(id==='lining') return h('div',{style:box},[0,1,2].map(i=>h('div',{key:i,style:{position:'absolute',bottom:'24%',left:`${28+i*18}%`,width:size*.1,height:size*.1,borderRadius:'50%',background:NAVY,animation:`mwRise 2.1s ease-out ${i*0.55}s infinite`,animationPlayState:ps}})),h('div',{key:'l',style:{position:'absolute',left:'18%',right:'18%',bottom:'20%',height:2,background:NAVY,opacity:.5}}));
+  return h('div',{style:box},h('div',{style:{width:'50%',height:'50%',borderRadius:4,background:NAVY,position:'relative',overflow:'hidden'}},[0,1,2].map(i=>h('div',{key:i,style:{position:'absolute',left:'-20%',right:'-20%',top:`${22+i*28}%`,height:1.5,background:'rgba(255,255,255,.85)',transform:`rotate(${i%2?-14:12}deg)`,animation:`mwCrease 2.6s ease-in-out ${i*0.12}s infinite alternate`,animationPlayState:ps}}))));
+}
+const ringEl=React.createElement('span',{style:{position:'absolute',inset:0,borderRadius:'50%',border:'1.5px solid rgba(255,255,255,.95)',animation:'mwPulse 2s ease-out infinite',pointerEvents:'none'}});
+
+class Component extends DCLogic {
+  constructor(p){
+    super(p);
+    const start=(p.startConcept||'F').slice(0,1);
+    this.eBuyRef=el=>{this.eBuy=el;};
+    this.tileFlip=(ti)=>{const cur=this.state.tSel;
+      if(cur!=null&&cur!==ti&&!this._tBusy){this._tBusy=true;this.tileFlipRaw(cur);const mode=this.state.tV||7;setTimeout(()=>{this._tBusy=false;this.tileFlipRaw(ti);},mode===10?620:mode===9?600:mode===8?560:480);return;}
+      if(!this._tBusy)this.tileFlipRaw(ti);};
+    this.tileGrow=(G,h0)=>{if(!G)return;const h1=G.offsetHeight;if(Math.abs(h1-h0)>1)G.animate([{height:h0+'px'},{height:h1+'px'}],{duration:540,easing:'cubic-bezier(.2,.8,.2,1)'});};
+    this.tileFlipRaw=(ti)=>{const mode=this.state.tV||7;const G=(document.querySelector('[data-tile]')||{}).parentElement,h0=G?G.offsetHeight:0;
+      if(mode===10){const els=[...document.querySelectorAll('[data-tile]')];Promise.all(els.map(e=>e.animate([{opacity:1,transform:'scale(1)'},{opacity:0,transform:'scale(.94)'}],{duration:180,easing:'ease-in',fill:'forwards'}).finished)).then(()=>{
+        this.setState(s=>({tSel:s.tSel===ti?null:ti}),()=>{this.tileGrow(G,h0);[...document.querySelectorAll('[data-tile]')].forEach((e,i)=>{e.getAnimations().forEach(a=>a.cancel());e.animate([{opacity:0,transform:'translateY(10px) scale(.96)'},{opacity:1,transform:'none'}],{duration:380,delay:i*50,easing:'cubic-bezier(.2,.8,.2,1)',fill:'backwards'});});});});return;}
+      const els=[...document.querySelectorAll('[data-tile]')],first=new Map(els.map(e=>[e.getAttribute('data-tile'),e.getBoundingClientRect()]));
+      this.setState(s=>({tSel:s.tSel===ti?null:ti}),()=>{this.tileGrow(G,h0);[...document.querySelectorAll('[data-tile]')].forEach(e=>{const a=first.get(e.getAttribute('data-tile')),b=e.getBoundingClientRect();if(!a)return;
+        const dx=a.left-b.left,dy=a.top-b.top,sx=a.width/b.width,sy=a.height/b.height;if(Math.abs(dx)<1&&Math.abs(dy)<1&&Math.abs(sx-1)<.01&&Math.abs(sy-1)<.01)return;
+        const order=[...document.querySelectorAll('[data-tile]')].indexOf(e);
+        const opt=mode===8?{duration:520,delay:order*70,easing:'cubic-bezier(.2,.8,.2,1)',fill:'backwards'}:mode===9?{duration:720,easing:'cubic-bezier(.34,1.56,.64,1)'}:{duration:560,easing:'cubic-bezier(.2,.8,.2,1)'};
+        e.animate([{transformOrigin:'top left',transform:`translate(${dx}px,${dy}px) scale(${sx},${sy})`},{transformOrigin:'top left',transform:'none'}],opt);});});};
+    this.tileClose=()=>{const c=this.state.tSel;if(c==null)return;(this.state.tV||1)>=7?this.tileFlipRaw(c):this.setState({tSel:null});};
+    this.onDocClick=e=>{if(this.state.tSel==null||this.state.concept!=='F')return;if(e.target.closest&&e.target.closest('[data-tile]'))return;setTimeout(()=>{if(this.state.tSel!=null)this.tileClose();},0);};
+    this.tPick=(i)=>{const tv=this.state.tV||1;if(tv===2){const fr=this.frame;this.setState({t2Open:true,t4:i,t2Top:fr?fr.scrollTop:0,t2H:fr?fr.clientHeight:this.state.frameH});return;}
+      if(tv===4){this.setState({t4:i,tProg:0});return;}this.setState(s=>({tSel:s.tSel===i?null:i}));};
+    this.fInnerRef=el=>{this.fInner=el;};
+    this.fLeftScroll=()=>this.onScroll();
+    this.fLeftRef=el=>{if(this.fLeftEl&&this.fLeftEl!==el)this.fLeftEl.removeEventListener('scroll',this.fLeftScroll);this.fLeftEl=el;if(el)el.addEventListener('scroll',this.fLeftScroll,{passive:true});};
+    this.fWheel=()=>{};
+    this.fWrapRef=el=>{if(this.fWrapEl&&this.fWrapEl!==el)this.fWrapEl.removeEventListener('wheel',this.fWheel);this.fWrapEl=el;if(el)el.addEventListener('wheel',this.fWheel,{passive:false});};
+    this.syncRight=()=>{};
+    this.ptmCenter=()=>{const t=this.ptmEl,c=t&&t.children[this.state.ptmSel??0];if(c&&t.scrollWidth>t.clientWidth+1)t.scrollLeft=c.offsetLeft-t.offsetLeft+c.offsetWidth/2-t.clientWidth/2;};
+    this.ptmRef=el=>{if(el===this.ptmEl)return;if(this.ptmRO){this.ptmRO.disconnect();this.ptmRO=null;}this.ptmEl=el;if(el){let w=-1;this.ptmRO=new ResizeObserver(()=>{if(el.clientWidth!==w){w=el.clientWidth;this.ptmCenter();}});this.ptmRO.observe(el);}};
+    this.state={echap:0,mini:false,fv:'caption',tV:7,hV:4,concept:['A','B','C','D','E','F'].includes(start)?start:'F',device:window.innerWidth<800?'mobile':'desktop',img:0,sel:null,showSpots:true,sel3d:null,chapter:0,wears:8,years:3,stop:0,size:null,frameH:700};
+    this.frameRef=el=>{this.frame=el;};
+    this.storyRef=el=>{this.story=el;};
+    this.threeRef=el=>this.setThree(el);
+    this.onResize=()=>{const d=window.innerWidth<800?'mobile':'desktop';if(d!==this.state.device)this.setState({device:d});this.measure();};
+  }
+  componentDidMount(){ document.addEventListener('click',this.onDocClick); window.addEventListener('resize',this.onResize); requestAnimationFrame(()=>this.measure()); }
+  componentWillUnmount(){ document.removeEventListener('click',this.onDocClick); clearInterval(this._tTimer); window.removeEventListener('resize',this.onResize); this.setThree(null); }
+  componentDidUpdate(pp,ps){
+    requestAnimationFrame(()=>this.syncRight&&this.syncRight());
+    if(ps.device!==this.state.device||ps.concept!==this.state.concept) requestAnimationFrame(()=>{
+      this.measure();
+    });
+  }
+  measure(){ if(!this.frame) return; const h=this.frame.clientHeight; if(h&&Math.abs(h-this.state.frameH)>1) this.setState({frameH:h}); }
+  goF(i){
+    const fr=this.frame; if(!fr) return; const el=fr.querySelectorAll('[data-fsec]')[i]; if(!el) return;
+    const sc=(this.state.device!=='mobile'&&this.fLeftEl)||fr;
+    sc.scrollTo({top:sc.scrollTop+el.getBoundingClientRect().top-sc.getBoundingClientRect().top,behavior:'smooth'});
+  }
+  goE(i){
+    const fr=this.frame; if(!fr) return;
+    if(i===0){ fr.scrollTo({top:0,behavior:'smooth'}); return; }
+    const el=fr.querySelectorAll('[data-sec]')[i]; if(!el) return;
+    const off=0;
+    fr.scrollTo({top:fr.scrollTop+el.getBoundingClientRect().top-fr.getBoundingClientRect().top-off,behavior:'smooth'});
+  }
+  onScroll(){
+    this.syncRight&&this.syncRight();
+    if(this.state.concept==='F'&&this.frame&&this.state.device!=='mobile'){
+      const fr=(this.fLeftEl||this.frame).getBoundingClientRect(),H=this.state.frameH;let a=0;
+      this.frame.querySelectorAll('[data-fsec]').forEach((el,i)=>{if(el.getBoundingClientRect().top-fr.top<H*0.5)a=i;});
+      if(a!==(this.state.fIdx||0))this.setState({fIdx:a});
+      return;
+    }
+    if(this.state.concept==='E'&&this.frame){
+      const fr=this.frame.getBoundingClientRect(), mob=this.state.device==='mobile', H=this.state.frameH;
+      const thr=H*0.5; let a=0;
+      this.frame.querySelectorAll('[data-sec]').forEach((el,i)=>{ if(el.getBoundingClientRect().top-fr.top<thr) a=i; });
+      if(a!==this.state.echap) this.setState({echap:a});
+      return;
+    }
+    if(this.state.concept!=='C'||!this.story||!this.frame) return;
+    const H=this.state.frameH, y=this.frame.scrollTop-this.story.offsetTop;
+    const ch=Math.max(0,Math.min(CHAPTERS.length-1,Math.floor((y+H*0.45)/H)));
+    if(ch!==this.state.chapter) this.setState({chapter:ch});
+  }
+  setConcept(k){ if(this.frame) this.frame.scrollTop=0; this.setState({concept:k,chapter:0,sel:null,sel3d:null,echap:0,mini:false}); }
+  pick3d(id){
+    const next=this.state.sel3d===id?null:id; this.setState({sel3d:next});
+    const T=this.three; if(T&&next){ const r=FOCUS[next].rot, cur=T.suit.rotation.y; T.drag.target=r+Math.PI*2*Math.round((cur-r)/(Math.PI*2)); }
+  }
+  setThree(el){
+    if(el===this.threeEl) return;
+    if(this.threeEl){ const T=this.three; if(T){ cancelAnimationFrame(T.raf); T.ro.disconnect(); T.renderer.dispose(); T.renderer.domElement.remove(); } this.three=null; }
+    this.threeEl=el; if(el) this.initThree(el);
+  }
+  async initThree(el){
+    let THREE; try{ THREE=await import('https://esm.sh/three@0.160.0'); }catch(e){ console.warn('three failed',e); return; }
+    if(this.threeEl!==el) return;
+    const media=el.parentElement;
+    const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});
+    renderer.setPixelRatio(Math.min(2,window.devicePixelRatio||1));
+    renderer.shadowMap.enabled=true; renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+    renderer.outputColorSpace=THREE.SRGBColorSpace; renderer.toneMapping=THREE.ACESFilmicToneMapping; renderer.toneMappingExposure=1.05;
+    Object.assign(renderer.domElement.style,{width:'100%',height:'100%',display:'block'});
+    el.appendChild(renderer.domElement);
+    const scene=new THREE.Scene();
+    const cam=new THREE.PerspectiveCamera(30,1,0.1,100); cam.position.set(0,-0.2,9.6);
+    scene.add(new THREE.HemisphereLight(0xfff3e4,0x8a7e70,1.2));
+    const key=new THREE.DirectionalLight(0xfff6ec,2.4); key.position.set(3,6,5); key.castShadow=true; key.shadow.mapSize.set(1024,1024);
+    Object.assign(key.shadow.camera,{left:-4,right:4,top:4,bottom:-4}); key.shadow.radius=6; scene.add(key);
+    const rim=new THREE.DirectionalLight(0xcfe0ff,0.9); rim.position.set(-4,3,-4); scene.add(rim);
+    const ground=new THREE.Mesh(new THREE.PlaneGeometry(30,30),new THREE.ShadowMaterial({opacity:0.16})); ground.rotation.x=-Math.PI/2; ground.position.y=-2.62; ground.receiveShadow=true; scene.add(ground);
+    // fabric texture
+    const c=document.createElement('canvas'); c.width=c.height=256; const g=c.getContext('2d'); g.fillStyle='#34558c'; g.fillRect(0,0,256,256);
+    const id=g.getImageData(0,0,256,256); for(let i=0;i<id.data.length;i+=4){const px=(i/4)%256,py=Math.floor(i/4/256);const n=(Math.random()-0.5)*22+(((px+py)%4)<2?7:-7);id.data[i]+=n;id.data[i+1]+=n;id.data[i+2]+=n;} g.putImageData(id,0,0);
+    const tex=new THREE.CanvasTexture(c); tex.wrapS=tex.wrapT=THREE.RepeatWrapping; tex.repeat.set(5,5); tex.colorSpace=THREE.SRGBColorSpace; tex.anisotropy=4;
+    const shell=new THREE.MeshStandardMaterial({color:0xffffff,map:tex,roughness:0.8,transparent:true,opacity:1});
+    const lining=new THREE.MeshStandardMaterial({color:0x2b3448,roughness:0.35,metalness:0.15,side:THREE.DoubleSide,emissive:new THREE.Color(0x6f95e0),emissiveIntensity:0});
+    const shirt=new THREE.MeshStandardMaterial({color:0xece7f2,roughness:0.7});
+    const tie=new THREE.MeshStandardMaterial({color:0x1e2747,roughness:0.5});
+    const form=new THREE.MeshStandardMaterial({color:0xd8cdbf,roughness:0.9});
+    const dark=new THREE.MeshStandardMaterial({color:0x14161c,roughness:0.4});
+    const shoe=new THREE.MeshStandardMaterial({color:0x6a3a1f,roughness:0.45});
+    const M=(geo,mat,x=0,y=0,z=0)=>{const m=new THREE.Mesh(geo,mat);m.position.set(x,y,z);m.castShadow=true;m.receiveShadow=true;return m;};
+    const suit=new THREE.Group(); scene.add(suit);
+    const prof=[[0.78,-0.55],[0.74,0],[0.8,0.8],[0.86,1.4],[0.7,1.7],[0.3,1.82]].map(([x,y])=>new THREE.Vector2(x,y));
+    const torso=M(new THREE.LatheGeometry(prof,64),shell); torso.scale.z=0.58; suit.add(torso);
+    const inner=M(new THREE.LatheGeometry(prof.map(v=>new THREE.Vector2(v.x-0.04,v.y)),64),lining); inner.scale.z=0.56; suit.add(inner);
+    const hip=M(new THREE.CylinderGeometry(0.62,0.6,0.5,48),shell,0,-0.4,0); hip.scale.z=0.62; suit.add(hip);
+    [-1,1].forEach(s=>{const sh=M(new THREE.SphereGeometry(0.3,32,24),shell,s*0.88,1.45,0); sh.scale.set(1,0.75,0.95); suit.add(sh);});
+    const arms={};
+    [-1,1].forEach(s=>{const p=new THREE.Group(); p.position.set(s*0.92,1.45,0); p.rotation.z=s*0.05; const sl=M(new THREE.CylinderGeometry(0.25,0.2,2.0,40),shell,0,-1,0); p.add(sl); p.add(M(new THREE.CylinderGeometry(0.19,0.19,0.07,32),shirt,0,-2.02,0)); p.add(M(new THREE.SphereGeometry(0.15,24,16),form,0,-2.18,0)); suit.add(p); arms[s]=p;});
+    const legs={};
+    [-1,1].forEach(s=>{const p=new THREE.Group(); p.position.set(s*0.3,-0.45,0); p.add(M(new THREE.CylinderGeometry(0.31,0.25,2.1,40),shell,0,-1.05,0)); p.add(M(new THREE.BoxGeometry(0.3,0.14,0.56),shoe,0,-2.1,0.08)); suit.add(p); legs[s]=p;});
+    suit.add(M(new THREE.CylinderGeometry(0.2,0.22,0.24,32),shirt,0,1.86,0));
+    suit.add(M(new THREE.CylinderGeometry(0.13,0.15,0.4,32),form,0,2.12,0));
+    const front=new THREE.Group(); front.position.set(0,1.25,0.445); front.rotation.x=-0.085; suit.add(front);
+    const tri=new THREE.Shape(); tri.moveTo(-0.3,0.5); tri.lineTo(0.3,0.5); tri.lineTo(0,-0.5); tri.closePath(); front.add(M(new THREE.ShapeGeometry(tri),shirt));
+    const ts=new THREE.Shape(); ts.moveTo(-0.05,0.42); ts.lineTo(0.05,0.42); ts.lineTo(0.085,-0.3); ts.lineTo(0,-0.4); ts.lineTo(-0.085,-0.3); ts.closePath(); front.add(M(new THREE.ShapeGeometry(ts),tie,0,0,0.006));
+    front.add(M(new THREE.BoxGeometry(0.11,0.09,0.04),tie,0,0.46,0.01));
+    [-1,1].forEach(s=>{const sh=new THREE.Shape(); const pts=[[-0.3,0.52],[0,-0.5],[-0.07,-0.5],[-0.52,0.16],[-0.44,0.24],[-0.47,0.3],[-0.38,0.56]]; sh.moveTo(pts[0][0]*(s<0?1:-1),pts[0][1]); pts.slice(1).forEach(([x,y])=>sh.lineTo(x*(s<0?1:-1),y)); sh.closePath(); const lp=M(new THREE.ExtrudeGeometry(sh,{depth:0.02,bevelEnabled:false}),shell,0,0,0.012); lp.rotation.y=s*0.2; front.add(lp);});
+    [0.55,0.15].forEach(y=>{const b=M(new THREE.CylinderGeometry(0.045,0.045,0.025,24),dark,0.02,y,0.455+(y-0.15)*0.04); b.rotation.x=Math.PI/2; suit.add(b);});
+    [-1,1].forEach(s=>{const f=M(new THREE.BoxGeometry(0.36,0.1,0.03),shell,s*0.42,-0.05,0.36); f.rotation.y=s*0.55; suit.add(f);});
+    const bp=M(new THREE.BoxGeometry(0.26,0.05,0.025),shell,0.42,1.12,0.42); bp.rotation.y=0.45; suit.add(bp);
+    const anchors={};
+    const mkA=(parent,x,y,z,id)=>{const o=new THREE.Object3D(); o.position.set(x,y,z); parent.add(o); anchors[id]=o;};
+    mkA(arms[1],0,-1.0,0.24,'stretch'); mkA(suit,-0.36,1.05,0.43,'temp'); mkA(suit,0.12,0.35,0.2,'lining'); mkA(legs[1],0,-1.0,0.3,'wrinkle');
+    const parts=[]; for(let i=0;i<36;i++){const m=new THREE.Mesh(new THREE.SphereGeometry(0.03,10,8),new THREE.MeshBasicMaterial({color:i%2?0x8fb5ff:0xffb27a,transparent:true,opacity:0,depthWrite:false})); m.userData={x:(Math.random()-0.5)*1.0,z:0.25+Math.random()*0.2,o:Math.random()}; suit.add(m); parts.push(m);}
+    const drag={on:false,x:0,target:0};
+    el.addEventListener('pointerdown',e=>{drag.on=true;drag.x=e.clientX;el.style.cursor='grabbing';el.setPointerCapture(e.pointerId);});
+    el.addEventListener('pointermove',e=>{if(!drag.on)return;drag.target+=(e.clientX-drag.x)*0.009;drag.x=e.clientX;});
+    const up=()=>{drag.on=false;el.style.cursor='grab';}; el.addEventListener('pointerup',up); el.addEventListener('pointercancel',up);
+    const ro=new ResizeObserver(()=>{const w=el.clientWidth,h=el.clientHeight;if(!w||!h)return;renderer.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();}); ro.observe(el);
+    const T=this.three={renderer,ro,suit,drag,raf:0};
+    const clock=new THREE.Clock(), look=new THREE.Vector3(0,-0.25,0), v=new THREE.Vector3(), wv=new THREE.Vector3();
+    const tick=()=>{
+      T.raf=requestAnimationFrame(tick);
+      const t=clock.getElapsedTime(), sel=this.state.sel3d, foc=FOCUS[sel]||FOCUS.none;
+      if(!sel&&!drag.on) drag.target+=0.0035;
+      suit.rotation.y+=(drag.target-suit.rotation.y)*0.08;
+      cam.position.y+=(foc.y-cam.position.y)*0.06; cam.position.z+=(foc.z-cam.position.z)*0.06; look.y+=(foc.ly-look.y)*0.06; cam.lookAt(look);
+      const s=sel==='stretch'?(0.5-0.5*Math.cos(t*1.8)):0;
+      arms[1].rotation.x+=(-1.3*s-arms[1].rotation.x)*0.2; legs[-1].rotation.x+=(-0.45*s-legs[-1].rotation.x)*0.2; legs[1].rotation.x+=(0.2*s-legs[1].rotation.x)*0.2;
+      const xo=sel==='lining'?0.16:1; shell.opacity+=(xo-shell.opacity)*0.1; shell.depthWrite=shell.opacity>0.97;
+      lining.emissiveIntensity+=((sel==='lining'?0.55:0)-lining.emissiveIntensity)*0.1;
+      const on=sel==='temp'||sel==='lining';
+      parts.forEach((p,i)=>{const ph=(t*0.32+p.userData.o)%1; p.position.set(p.userData.x*(1+ph*0.6),0.3+ph*2.0,p.userData.z+ph*0.7); const tgt=on?Math.sin(ph*Math.PI)*0.9:0; p.material.opacity+=(tgt-p.material.opacity)*0.15; p.material.color.setHex(sel==='lining'?0xdfe8ff:(i%2?0x8fb5ff:0xffb27a));});
+      renderer.render(scene,cam);
+      const W=el.clientWidth,H=el.clientHeight;
+      media.querySelectorAll('[data-hs3d]').forEach(b=>{const a=anchors[b.getAttribute('data-hs3d')]; if(!a)return; a.getWorldPosition(wv); v.copy(wv).project(cam); b.style.left=((v.x+1)/2*W)+'px'; b.style.top=((1-v.y)/2*H)+'px'; const id=b.getAttribute('data-hs3d'); const vis=sel?sel===id:wv.z>0.05; b.style.opacity=vis?1:0; b.style.pointerEvents=vis?'auto':'none';});
+      const ln=media.querySelector('[data-leader]'), card=media.querySelector('[data-card3d]');
+      if(ln){ if(sel&&card&&anchors[sel]){ anchors[sel].getWorldPosition(wv); v.copy(wv).project(cam); const mr=media.getBoundingClientRect(), cr=card.getBoundingClientRect(); ln.setAttribute('x1',(v.x+1)/2*W); ln.setAttribute('y1',(1-v.y)/2*H); ln.setAttribute('x2',cr.left-mr.left+34); ln.setAttribute('y2',cr.top-mr.top); ln.setAttribute('opacity','0.5'); } else ln.setAttribute('opacity','0'); }
+    };
+    tick();
+  }
+  renderVals(){
+    const st=this.state, p=this.props, price=p.price??230, hs=p.hotspotStyle??'Numbered', mobile=st.device==='mobile';
+    const F=FEATURES.map(f=>({...f,viz:viz(f.id,64)})); const by=Object.fromEntries(F.map(f=>[f.id,f]));
+    const pill=(on)=>({display:'flex',alignItems:'center',gap:'6px',whiteSpace:'nowrap',padding:'8px 14px',borderRadius:'999px',border:'none',cursor:'pointer',fontSize:'13px',fontWeight:500,background:on?INK:'transparent',color:on?'#fff':INK,transition:'background .2s'});
+    const concepts=CONCEPTS.map(c=>({...c,pick:()=>this.setConcept(c.k),style:pill(st.concept===c.k)}));
+    const devices=[['desktop','Desktop'],['mobile','Mobile']].map(([k,t])=>({t,pick:()=>this.setState({device:k}),style:pill(st.device===k)}));
+    const lock=st.szOpen&&st.concept==='F'?{overflow:'hidden'}:{};
+    const frameStyle0={position:'relative',width:'100%',height:'100vh',overflow:'auto',background:'oklch(0.985 0.004 80)'};
+    const frameStyle={...frameStyle0,...lock};
+    const dot=(on)=>({width:'30px',height:'30px',borderRadius:'50%',background:on?INK:'rgba(255,255,255,.96)',color:on?'#fff':INK,display:'flex',alignItems:'center',justifyContent:'center',fontSize:'13px',fontWeight:600,boxShadow:'0 2px 10px rgba(20,25,40,.25)',position:'relative',transition:'background .2s'});
+    // A
+    const g=GALLERY[st.img];
+    const spots=g.spots.map(s=>{const f=by[s.f],on=st.sel===s.f;return {n:f.n,name:f.name,plusGlyph:on?'×':'+',numbered:hs==='Numbered',plus:hs==='Plus',label:hs==='Label',pick:()=>this.setState({sel:on?null:s.f}),dotStyle:dot(on),
+      pillStyle:{display:'flex',alignItems:'center',gap:'8px',padding:'7px 12px',borderRadius:'999px',background:on?INK:'rgba(255,255,255,.96)',color:on?'#fff':INK,fontSize:'12.5px',fontWeight:600,whiteSpace:'nowrap',boxShadow:'0 2px 10px rgba(20,25,40,.25)'},
+      style:{position:'absolute',left:s.x+'%',top:s.y+'%',transform:'translate(-50%,-50%)',opacity:st.showSpots?1:0,pointerEvents:st.showSpots?'auto':'none',transition:'opacity .3s',zIndex:on?3:2,border:'none',background:'none',padding:0,cursor:'pointer'}};});
+    const thumbs=GALLERY.map((gg,i)=>({src:gg.src,pick:()=>this.setState({img:i,sel:gg.spots.some(s=>s.f===st.sel)?st.sel:null}),style:{width:'64px',height:'80px',padding:0,borderRadius:'10px',overflow:'hidden',cursor:'pointer',border:i===st.img?`2px solid ${INK}`:'2px solid transparent',background:'none',opacity:i===st.img?1:0.75}}));
+    const row=(on)=>({display:'flex',alignItems:'center',gap:'14px',padding:'14px 12px',margin:'0 -12px',border:'none',borderBottom:`1px solid ${LINE}`,borderRadius:on?'12px':'0',background:on?'oklch(0.95 0.01 258)':'transparent',cursor:'pointer',color:INK,transition:'background .2s'});
+    const num=(on)=>({width:'28px',height:'28px',flex:'none',borderRadius:'50%',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'12px',fontWeight:600,background:on?NAVY:'oklch(0.93 0.006 80)',color:on?'#fff':INK});
+    const rowsA=F.map(f=>({...f,rowStyle:row(st.sel===f.id),numStyle:num(st.sel===f.id),pick:()=>{let img=st.img;if(!GALLERY[img].spots.some(s=>s.f===f.id)) img=GALLERY.findIndex(x=>x.spots.some(s=>s.f===f.id));this.setState({sel:f.id,img,showSpots:true});}}));
+    const sizes=['38R','40R','42R','44R','40L','42L'].map(t=>({t,pick:()=>this.setState({size:t}),style:{minWidth:'56px',height:'40px',borderRadius:'10px',cursor:'pointer',fontSize:'13px',fontWeight:500,border:st.size===t?`1.5px solid ${INK}`:`1px solid oklch(0.85 0.006 80)`,background:'#fff',color:INK}}));
+    // B
+    const rowsB=F.map(f=>({...f,rowStyle:row(st.sel3d===f.id),numStyle:num(st.sel3d===f.id),pick:()=>this.pick3d(f.id)}));
+    const hs3d=F.map(f=>({id:f.id,n:f.n,pick:()=>this.pick3d(f.id),dotStyle:dot(st.sel3d===f.id)}));
+    // C
+    const H=st.frameH, cur=CHAPTERS[st.chapter];
+    const featCards=CHAPTERS.map((c,i)=>({c,i})).filter(x=>x.c.f).map(({c,i})=>{const f=by[c.f],on=i===st.chapter,past=i<st.chapter;return {eyebrow:`${f.n} / 4 · ${f.name}`,head:f.head,body:f.body,proof:f.proof,viz:viz(f.id,mobile?52:64),
+      style:{position:'absolute',left:0,right:0,top:mobile?'16px':'32px',display:'flex',flexDirection:'column',gap:mobile?'8px':'12px',opacity:on?1:0,transform:`scale(${on?1:0.92})`,transformOrigin:'left top',transition:on?'opacity .45s ease .2s, transform .6s cubic-bezier(.2,.7,.2,1) .2s':'opacity .3s ease, transform .35s ease',pointerEvents:on?'auto':'none'}};});
+    const srcs=[...new Set(CHAPTERS.map(c=>c.src))];
+    const storyImgs=srcs.map(src=>{const on=cur.src===src;return {src,style:{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'cover',objectPosition:'50% 30%',opacity:on?1:0,transition:'opacity .6s'}};});
+    const progress=CHAPTERS.map((c,i)=>({width:'6px',height:i===st.chapter?'22px':'6px',borderRadius:'3px',background:i===st.chapter?INK:'rgba(255,255,255,.85)',boxShadow:'0 0 0 1px rgba(20,25,40,.15)',transition:'height .3s'}));
+    // D
+    const total=st.wears*12*st.years, cpwN=price/total;
+    const cpwLine=cpwN<3?'Less than your morning coffee.':cpwN<8?'Less than a lunch out.':'Wear it more. The math only gets better.';
+    const stops=STOPS.map((s,i)=>{const on=i===st.stop;return {...s,pick:()=>this.setState({stop:i}),style:{display:'flex',flexDirection:'column',alignItems:'flex-start',gap:'6px',padding:'12px',borderRadius:'14px',border:on?`1.5px solid ${INK}`:`1px solid ${LINE}`,background:'#fff',cursor:'pointer',color:INK,textAlign:'left',minWidth:0},
+      bar:{width:'100%',height:`${(s.temp-55)/32*100}%`,borderRadius:'8px',background:s.temp>=78?'oklch(0.78 0.11 55)':'oklch(0.78 0.09 230)',opacity:on?1:0.45,transition:'opacity .2s'}};});
+    const so=STOPS[st.stop];
+    // E
+    const eRows=EC.map((c,i)=>{
+      const gg=GALLERY[c.img],[w,hh]=gg.ar.split('/').map(Number),sp=c.f?gg.spots.find(x=>x.f===c.f):null;
+      return {src:gg.src,
+        media:{position:'relative',height:mobile?'440px':H+'px',display:'flex',alignItems:'center',justifyContent:'center',containerType:'size',overflow:'hidden',background:c.img===1?'#f3f3f1':'oklch(0.9 0.015 75)'},
+        box:{position:'relative',width:`min(100cqw, calc(100cqh * ${w/hh}))`,aspectRatio:gg.ar,transform:`scale(${c.s})`,transformOrigin:sp?`${sp.x}% ${sp.y}%`:'50% 50%'}};
+    });
+    const fade=(on)=>({position:'absolute',left:0,right:0,top:mobile?'12px':'32px',display:'flex',flexDirection:mobile?'column':'column',gap:mobile?'6px':'12px',opacity:on?1:0,transform:`scale(${on?1:0.92})`,transformOrigin:'left top',transition:on?'opacity .45s ease .2s, transform .6s cubic-bezier(.2,.7,.2,1) .2s':'opacity .3s ease, transform .35s ease',pointerEvents:on?'auto':'none'});
+    const eCards=EC.map((c,i)=>({c,i})).filter(x=>x.c.f).map(({c,i})=>{const f=by[c.f];return {eyebrow:`${f.n} / 4 · ${f.name}`,head:f.head,body:f.body,proof:mobile?'':f.proof,viz:mobile?null:viz(f.id,64),style:fade(st.echap===i)};});
+    // F
+    const fv=st.fv, fN=FS.filter(x=>x.f).length, byF={...by,...FX};
+    const fSlides=FS.map((c,i)=>{
+      const fe=c.f?byF[c.f]:null, ink=c.dark?'#fff':INK, right=(c.ax||0)>55, ay=Math.max(22,Math.min(78,c.ay||50));
+      const imgSt={position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'cover',objectPosition:c.op||'50% 40%',display:'block',transform:`scale(${c.s||1})`,transformOrigin:`${c.ox??c.ax??50}% ${c.oy??c.ay??50}%`};
+      const h=React.createElement, pillS={position:'absolute',top:mobile?'14px':'20px',padding:'6px 12px',borderRadius:'4px',background:'rgba(250,248,245,.92)',backdropFilter:'blur(8px)',fontSize:'12px',fontWeight:600,color:INK,zIndex:2};
+      const compare=c.compare?h(React.Fragment,null,
+        h('div',{style:{position:'absolute',inset:0,overflow:'hidden',animation:'mwClip 6s ease-in-out infinite',pointerEvents:'none'}},
+          h('img',{src:c.src2||c.src,alt:'',style:imgSt})),
+        h('div',{style:{position:'absolute',top:0,bottom:0,width:'2px',marginLeft:'-1px',background:'rgba(255,255,255,.95)',animation:'mwLine 6s ease-in-out infinite',pointerEvents:'none',zIndex:1}}),
+        h('div',{style:{...pillS,left:mobile?'14px':'20px'}},'Warm when it’s cold'),
+        h('div',{style:{...pillS,right:mobile?'14px':'20px'}},'Cool when it’s hot')):null;
+      return {src:c.src,compare,single:!(mobile&&i===0),strip:mobile&&i===0,cap:!!fe&&fv==='caption',pin:!!fe&&fv==='pin',spec:!!fe&&fv==='spec',
+        n:fe?fe.n:'',num:fe?String(i).padStart(2,'0'):'',name:fe?fe.name:'',eyebrow:fe?`${String(i).padStart(2,'0')} / ${String(fN).padStart(2,'0')} · ${fe.name}`:'',head:fe?(c.f==='temp'?fe.head:fe.name):'',body:fe?fe.body:'',proof:fe?fe.proof:'',viz:fe?viz(c.f,mobile?44:56):null,
+        media:{position:'relative',flex:'none',height:mobile?'460px':'auto',aspectRatio:mobile?'auto':'4 / 5',maxHeight:mobile?'none':Math.round((H-76)*0.86)+'px',overflow:'hidden',background:c.bg||'oklch(0.9 0.015 75)',...(!mobile&&c.fit?{backgroundImage:`url("${c.src}")`,backgroundSize:'cover',backgroundPosition:'50% 30%'}:{}),order:mobile?(i===0?0:2):0,display:(mobile&&c.gal)?'none':'block'},imgSt,
+        img:(!mobile&&c.fit)?{position:'absolute',left:'50%',top:'-5%',height:'110%',width:'auto',maxWidth:'none',aspectRatio:'4 / 5',transform:'translateX(-50%)',display:'block',WebkitMaskImage:'linear-gradient(90deg, transparent 0, #000 12%, #000 88%, transparent 100%)',maskImage:'linear-gradient(90deg, transparent 0, #000 12%, #000 88%, transparent 100%)'}:{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'cover',objectPosition:c.op||'50% 40%',display:'block',transform:`scale(${c.s||1})`,transformOrigin:`${c.ox??c.ax??50}% ${c.oy??c.ay??50}%`},
+        capBox:{position:'absolute',left:mobile?'20px':'40px',right:mobile?'20px':'40px',bottom:mobile?'24px':'40px',display:'flex',flexDirection:'column',gap:'10px',color:'#fff'},
+        capHead:{fontSize:mobile?'26px':'clamp(30px,3.2vw,44px)',fontWeight:600,letterSpacing:'-.03em',lineHeight:1.05,textWrap:'balance',color:'#fff'},
+        pinDot:{position:'absolute',left:(c.ax||50)+'%',top:(c.ay||50)+'%',transform:'translate(-50%,-50%)',zIndex:2},
+        pinCard:mobile?{position:'absolute',left:'14px',right:'14px',...((c.ay||50)>55?{top:'14px'}:{bottom:'14px'}),display:'flex',gap:'12px',alignItems:'flex-start',padding:'14px',borderRadius:'8px',background:'rgba(250,248,245,.95)',backdropFilter:'blur(12px)',boxShadow:'0 10px 30px rgba(20,25,40,.2)',color:INK}
+          :{position:'absolute',left:`clamp(14px, calc(${c.ax}% - 150px), calc(100% - min(300px, calc(100% - 28px)) - 14px))`,top:`calc(${c.ay}% + ${c.ay>55?-32:32}px)`,transform:c.ay>55?'translateY(-100%)':'none',width:'min(300px, calc(100% - 28px))',boxSizing:'border-box',display:'flex',gap:'12px',alignItems:'flex-start',padding:'16px',borderRadius:'8px',background:'rgba(250,248,245,.95)',backdropFilter:'blur(12px)',boxShadow:'0 10px 30px rgba(20,25,40,.2)',color:INK,zIndex:3},
+        specTop:{position:'absolute',left:mobile?'20px':'40px',top:mobile?'20px':'36px',display:'flex',flexDirection:'column',gap:'4px',color:ink},
+        specNum:{fontFamily:"'Geist Mono',monospace",fontSize:'12px',fontWeight:500,letterSpacing:'.08em',color:NAVY},
+        specName:{fontSize:mobile?'17px':'clamp(18px,1.7vw,22px)',fontWeight:600,letterSpacing:'-.025em',lineHeight:1.1,color:INK,textWrap:'balance'},
+        specBar:{position:'absolute',left:mobile?'14px':'24px',right:mobile?'14px':'24px',bottom:mobile?'14px':'24px',display:'flex',alignItems:'flex-start',gap:mobile?'12px':'18px',padding:mobile?'14px':'20px 22px',boxSizing:'border-box',borderRadius:'8px',background:'rgba(250,248,245,.94)',backdropFilter:'blur(12px)',color:INK}};
+    });
+    const heroSrc=[fSlides[0],...fSlides.filter((r,i)=>FS[i].gal)];
+    const heroStrip=heroSrc.map(r=>({src:r.src,img:r.imgSt}));
+    const heroDots=heroStrip.map((x,i)=>({width:i===(st.heroIdx||0)?'16px':'6px',height:'6px',borderRadius:'3px',background:i===(st.heroIdx||0)?INK:'oklch(0.7 0.006 80)',transition:'width .25s'}));
+    const tv=st.tV||1, tsel=st.tSel, feats=FS.filter(x=>x.f), anyOn=tsel!=null, dark=tv===3||tv===6, keepLbl=tv>=4, spine=tv===5, wrapV=tv>=7;
+    const fIndex=feats.map((c,ti)=>{const fe=byF[c.f], nm=fe.tile||fe.name, k=nm.indexOf(' '), on=tsel===ti, dim=anyOn&&!on&&!wrapV, off=anyOn&&!on;
+      const flip=tv===2, bg=on?(dark||flip?INK:'#fff'):'#fff', fg=on&&(dark||flip)?'#fff':INK, sub=on&&(dark||flip)?'rgba(255,255,255,.78)':'oklch(0.40 0.012 260)';
+      const ease='cubic-bezier(.2,.8,.2,1)';
+      return {name:nm,l1:nm.slice(0,k),l2:nm.slice(k+1),head:fe.head,body:fe.body,on,viz:viz(c.f,40),vizS:viz(c.f,32),key:'t'+ti,pick:()=>{if(tsel!=null&&tsel!==ti){this.tileClose();return;}wrapV?this.tileFlipRaw(ti):this.setState(s=>({tSel:s.tSel===ti?null:ti}));},
+        style:wrapV?{position:'relative',padding:0,border:on?`1.5px solid ${INK}`:(off?'1px solid transparent':`1px solid ${LINE}`),borderRadius:'8px',background:off?'transparent':'#fff',cursor:off?'default':'pointer',color:INK,textAlign:'left',minWidth:0,height:anyOn?(on?'auto':'80px'):'112px',minHeight:on?'256px':0,overflow:'hidden',gridColumn:anyOn?(on?'1':'2'):'auto',gridRow:on?'1 / span 3':'auto',boxSizing:'border-box',boxShadow:on?'0 10px 30px rgba(20,25,40,.12)':'none',transition:'border-color .3s, box-shadow .3s'}:{position:'relative',padding:0,border:on?`1.5px solid ${INK}`:(off?'1px solid transparent':`1px solid ${LINE}`),borderRadius:'8px',background:flip||off?'transparent':bg,cursor:off?'default':'pointer',color:fg,textAlign:'left',minWidth:0,height:anyOn?((tv===4||tv===6)?(mobile?'360px':'320px'):(mobile?'270px':'236px')):'112px',overflow:flip?'visible':'hidden',perspective:'900px',transition:`height .5s ${ease}, background .4s ease, border-color .3s, opacity .3s`,opacity:dim&&dark?0.55:1,boxShadow:on?'0 10px 30px rgba(20,25,40,.14)':'none',...(flip?{border:'none'}:{})},
+        inner:{position:'absolute',inset:0,transformStyle:'preserve-3d',transition:`transform .7s ${ease}`,transform:flip&&on?'rotateY(180deg)':'none'},
+        front:wrapV&&anyOn&&!on?{position:'absolute',inset:0,display:'flex',flexDirection:'row',alignItems:'center',gap:'10px',padding:'0 0 0 8px',boxSizing:'border-box',opacity:1,backfaceVisibility:'hidden'}:{position:'absolute',inset:0,display:'flex',flexDirection:'column',alignItems:'center',justifyContent:anyOn&&!on&&!keepLbl?'flex-start':(spine&&dim?'flex-end':'center'),gap:spine&&dim?'14px':'10px',padding:anyOn&&!on?(spine?'14px 4px 18px':'18px 4px'):'14px 2px 12px',flexDirection:spine&&dim?'column-reverse':'column',borderRadius:'8px',background:flip&&!off?'#fff':'transparent',border:flip&&!off?`1px solid ${LINE}`:'none',boxSizing:'border-box',opacity:on&&!flip?0:1,transform:on&&!flip?'scale(.9)':'none',transition:`opacity .25s ease, transform .4s ${ease}, padding .5s ${ease}`,backfaceVisibility:'hidden',WebkitBackfaceVisibility:'hidden'},
+        label:wrapV&&anyOn&&!on?{display:'flex',flexDirection:'column',alignItems:'flex-start',fontSize:'11.5px',fontWeight:500,lineHeight:1.25,textAlign:'left',color:INK}:spine&&dim?{display:'flex',flexDirection:'row',gap:'4px',alignItems:'center',writingMode:'vertical-rl',transform:'rotate(180deg)',fontSize:'12px',fontWeight:600,lineHeight:1.2,color:INK,whiteSpace:'nowrap',letterSpacing:'.01em'}
+          :{display:'flex',flexDirection:'column',alignItems:'center',fontSize:keepLbl&&dim?'11px':'12px',fontWeight:500,lineHeight:1.3,textAlign:'center',color:dark&&dim?'oklch(0.40 0.012 260)':INK,opacity:dim&&!keepLbl?0:1,maxHeight:dim&&!keepLbl?0:'60px',overflow:'hidden',transition:'opacity .25s, max-height .4s, font-size .3s',whiteSpace:'nowrap'},
+        back:{position:'absolute',inset:0,display:'flex',flexDirection:'column',gap:'8px',padding:mobile?'14px':'16px 18px',boxSizing:'border-box',borderRadius:'8px',background:flip?INK:'transparent',color:fg,opacity:on?1:0,transform:flip?'rotateY(180deg)':(on?'translateY(0)':'translateY(10px)'),transition:flip?'none':`opacity .35s ease ${on?'.18s':'0s'}, transform .5s ${ease} ${on?'.12s':'0s'}`,backfaceVisibility:'hidden',WebkitBackfaceVisibility:'hidden',pointerEvents:on?'auto':'none',overflow:'hidden'},
+        close:{width:'26px',height:'26px',borderRadius:'50%',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'11px',background:on&&(dark||flip)?'rgba(255,255,255,.14)':'oklch(0.94 0.006 80)',color:fg,flex:'none'},
+        nameS:{fontFamily:"'Geist Mono',monospace",fontSize:'10.5px',letterSpacing:'.08em',textTransform:'uppercase',color:on&&(dark||flip)?'rgba(255,255,255,.7)':'oklch(0.40 0.09 258)'},
+        headS:{fontSize:mobile?'15px':'16px',fontWeight:600,letterSpacing:'-.01em',lineHeight:1.2,color:fg,textWrap:'balance'},
+        bodyS:{fontSize:'12.5px',lineHeight:1.45,color:sub,textWrap:'pretty'}};});
+    const tGrid=wrapV?{display:'grid',gridAutoFlow:'row dense',gridTemplateColumns:anyOn?'minmax(0,1fr) minmax(0,128px)':'repeat(4,minmax(0,1fr))',gap:'8px',alignItems:'stretch'}:{display:'grid',gridAutoFlow:wrapV?'row dense':'row',gridTemplateColumns:wrapV?(anyOn?'repeat(3,minmax(0,1fr))':'repeat(4,minmax(0,1fr))'):anyOn?feats.map((_,i)=>i===tsel?(tv===4||tv===6?'3.6fr':(mobile?'6fr':'4.2fr')):(tv===4||tv===6?'0.9fr':'1fr')).join(' '):'repeat(4,minmax(0,1fr))',gap:'8px',transition:'grid-template-columns .55s cubic-bezier(.2,.8,.2,1)',alignItems:'start'};
+    const ACC=[{k:'details',t:'Product details',items:['Wool, polyester and spandex blend with 37.5® Technology','4-way stretch fabric','Modern fit jacket with a breathable lining','Flat-front trousers, unhemmed for custom tailoring','Dry clean only']},{k:'ship',t:'Shipping & returns',items:['Free standard delivery, arriving in 3–5 business days','Free in-store pickup at participating stores','Free returns by mail or in store']}];
+    const fAcc=ACC.map((a,ai)=>({wrap:{display:'flex',flexDirection:'column',borderBottom:ai<ACC.length-1?`1px solid ${LINE}`:'none'},t:a.t,items:a.items,open:st.fAcc===a.k,glyph:st.fAcc===a.k?'−':'+',toggle:()=>this.setState(s=>({fAcc:s.fAcc===a.k?null:a.k}))}));
+    const FCOLORS=[{k:'blue',name:'Blue',c:'#3a5a92'},{k:'navy',name:'Navy',c:'#1f2a44'},{k:'charcoal',name:'Charcoal',c:'#3d3f44'},{k:'grey',name:'Light grey',c:'#a8a9ab'},{k:'tan',name:'Tan',c:'#b39570'}];
+    const fColors=FCOLORS.map(c=>{const on=(st.fColor||'blue')===c.k;return {name:c.name,pick:()=>this.setState({fColor:c.k}),
+      ring:{transition:'transform .3s cubic-bezier(.2,.8,.2,1)',width:'36px',height:'36px',borderRadius:'50%',padding:'3px',border:on?`1.5px solid ${INK}`:'1.5px solid transparent',background:'none',cursor:'pointer',boxSizing:'border-box'},
+      chip:{display:'block',width:'100%',height:'100%',borderRadius:'50%',background:c.c,boxShadow:'inset 0 0 0 1px rgba(0,0,0,.12)'}};});
+    const szBtn=(on)=>({height:'44px',borderRadius:'4px',cursor:'pointer',fontSize:'14px',fontWeight:500,border:on?`1.5px solid ${INK}`:'1px solid oklch(0.86 0.006 80)',background:on?'oklch(0.96 0.006 80)':'#fff',color:INK,padding:0});
+    const tg=(k,t)=>()=>this.setState(s=>({[k]:s[k]===t?null:t}));
+    const fChests=['36','38','40','42','44','46','48'].map(t=>({t,pick:tg('fChest',t),style:szBtn(st.fChest===t)}));
+    const fLen=st.fLen||null;
+    const fLens=['Short','Regular','Long'].map(t=>({t,pick:tg('fLen',t),style:szBtn(fLen===t)}));
+    const fSize=st.fChest&&fLen?st.fChest+fLen[0]:null;
+    const pWaists=['28','30','32','34','36','38','40','42','44'].map(t=>({t,pick:tg('pWaist',t),style:szBtn(st.pWaist===t)}));
+    const pIns=st.pIns||null;
+    const pInseams=['30','32','34','Unhemmed'].map(t=>({t,pick:tg('pIns',t),style:{...szBtn(pIns===t),fontSize:t==='Unhemmed'?'12.5px':'14px'}}));
+    const pSize=st.pWaist&&pIns?st.pWaist+'W'+(pIns==='Unhemmed'?'':' × '+pIns+'L'):null;
+    const inJ=st.inJ!==false, inP=st.inP!==false;
+    const ready=(inJ||inP)&&(!inJ||!!fSize)&&(!inP||!!pSize), open=!!st.szOpen;
+    const pieceLbl=inJ&&inP?'Jacket & pants':inJ?'Jacket only':inP?'Pants only':'Nothing selected';
+    const sizesLbl=[inJ&&fSize,inP&&pSize].filter(Boolean).join(' / ');
+    const piece=(on,k,sz,thumb)=>({on,toggle:()=>this.setState(s=>({[k]:s[k]===false})),check:on?'✓':'',wrap:{width:'44px',height:'52px',borderRadius:'8px',overflow:'hidden',flex:'none',background:'oklch(0.92 0.012 75)',opacity:on?1:0.45,transition:'opacity .2s'},sub:on?(sz||'Choose a size'):'Not included',
+      box:{width:'22px',height:'22px',borderRadius:'4px',flex:'none',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'13px',fontWeight:700,color:'#fff',background:on?INK:'#fff',border:on?`1.5px solid ${INK}`:'1.5px solid oklch(0.78 0.006 80)',transition:'background .15s'},
+      thumb:{width:'100%',height:'100%',objectFit:'cover',objectPosition:thumb,display:'block',transform:'scale(2.2)',transformOrigin:thumb}});
+    const pj=piece(inJ,'inJ',fSize,'50% 30%'), pp=piece(inP,'inP',pSize,'50% 78%');
+    const PTM=[{img:'assets/pdp-front.jpg',zoom:{s:1.9,ox:50,oy:10},alt:'Awearness Kenneth Cole navy suit',tag:'Budget',viewing:true,now:'$'+price.toFixed(2),was:'$329.99',brand:'Awearness Kenneth Cole',href:'#',fibers:[['63%','Polyester'],['33%','Viscose'],['4%','Spandex']],noteHead:'Smart value.',note:'Our most economical option: an easy-care synthetic blend with a touch of stretch, ready for occasional wear.'},
+      {img:'assets/ptm-midrange2.jpg',zoom:{s:1.9,ox:51,oy:22},alt:'Pronto Uomo Platinum classic fit navy suit',tag:'Mid-range',now:'$429.99',brand:'Pronto Uomo Platinum',href:'https://www.menswearhouse.com/p/pronto-uomo-platinum-classic-fit-suit-tmw-3bu9?color=navy-solid',fibers:[['51%','Wool'],['47%','Polyester'],['2%','Spandex']],noteHead:'A real step up.',note:'Half wool, so it breathes better, drapes more naturally and looks more refined than an all-synthetic suit.'},
+      {img:'assets/ptm-premium2.jpg',zoom:{s:1.9,ox:51,oy:15},alt:'Joseph Abboud classic fit navy suit',tag:'Premium',now:'$499.99',brand:'Joseph Abboud',href:'#',fibers:[['70%','Wool'],['28%','Polyester'],['2%','Spandex']],noteHead:'Our finest fabric.',note:'The most wool of the three, for a softer feel, a cleaner drape and a sharp look that holds up wear after wear.'}];
+    const ptmSel=st.ptmSel??0, PACC=INK;
+    const ptmGo=(k)=>{const t=this.ptmEl;if(t&&mobile){const c=t.children[k];if(c)t.scrollTo({left:c.offsetLeft-t.offsetLeft+c.offsetWidth/2-t.clientWidth/2,behavior:'smooth'});}this.setState({ptmSel:k});};
+    const ptmCards=PTM.map((p,k)=>{const on=!!p.viewing;return {...p,onSale:!!p.was,fibers:p.fibers.map(([a,b])=>({p:a,n:b})),pick:()=>{},enter:()=>{if(!on)this.setState({ptmHov:k});},leave:()=>{if(this.state.ptmHov===k)this.setState({ptmHov:null});},
+      card:{transition:'transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s cubic-bezier(.2,.8,.2,1)',flex:mobile?'0 0 220px':'initial',scrollSnapAlign:'center',display:'flex',flexDirection:'column',padding:'12px',boxSizing:'border-box',borderRadius:'8px',background:'oklch(0.955 0.006 80)',boxShadow:on?`inset 0 0 0 1.5px ${INK}`:'none',cursor:'default',color:INK,...(!on&&st.ptmHov===k?{transform:'translateY(-8px) rotate(-.6deg)',boxShadow:'0 22px 44px rgba(20,25,40,.16)'}:{})},
+      imgStyle:{display:'block',width:'100%',height:'100%',objectFit:'cover',objectPosition:'top',...(p.zoom?{transform:`scale(${p.zoom.s})`,transformOrigin:`${p.zoom.ox}% ${p.zoom.oy}%`}:{})},
+      media:{position:'relative',overflow:'hidden',borderRadius:'8px',height:mobile?'270px':'auto',aspectRatio:mobile?'auto':'3 / 4',background:'oklch(0.9 0.006 80)'},
+      badges:[{t:p.tag,dark:on},...(p.viewing?[{t:'This Suit',dark:true}]:[])].map(b=>({t:b.t,style:{padding:'5px 10px',borderRadius:'4px',background:b.dark?INK:'oklch(0.985 0.004 80)',color:b.dark?'#fff':INK,fontSize:'11px',fontWeight:600,letterSpacing:'.08em',textTransform:'uppercase'}}))};});
+    const ptmDots=PTM.map((p,k)=>({label:'Show '+p.tag,pick:()=>ptmGo(k),dot:{width:k===ptmSel?'22px':'8px',height:'8px',borderRadius:'999px',background:k===ptmSel?PACC:'#c9c9c9',transition:'width .2s, background-color .2s'}}));
+    const hv=st.hV??1, E2='cubic-bezier(.2,.8,.2,1)';
+    const HT={stretch:'oklch(0.95 0.02 258)',temp:'linear-gradient(90deg, oklch(0.93 0.035 230), oklch(0.94 0.04 60))',lining:'oklch(0.95 0.02 230)',wrinkle:'oklch(0.95 0.008 258)'};
+    const HA={stretch:'mwHovStretch 2.4s ease-in-out infinite',temp:'mwHovSway 3.2s ease-in-out infinite',lining:'mwHovRise 2.1s ease-in-out infinite',wrinkle:'mwHovSmooth 1.3s ease-out both'};
+    fIndex.forEach((x,ti)=>{const id=feats[ti].f, idle=tsel==null, hov=idle&&st.tHov===ti;
+      x.enter=()=>this.setState({tHov:ti});x.leave=()=>{if(this.state.tHov===ti)this.setState({tHov:null});};
+      x.viz=React.createElement('span',{style:{display:'flex',transition:`transform .4s ${E2}`,transform:hov&&hv===2?'scale(1.3)':'none'}},viz(id,40,!(hv===1&&idle&&!hov)));
+      if(!hov)return;
+      if(hv===2)x.label={...x.label,transform:'translateY(3px)',transition:`transform .4s ${E2}`};
+      if(hv===3){x.style={...x.style,border:`1px solid ${INK}`,background:HT[id]||HT.wrinkle,boxShadow:'0 8px 22px rgba(20,25,40,.12)'};x.front={...x.front,transform:'translateY(-3px)'};}
+      if(hv===4){x.style={...x.style,border:`1px solid ${INK}`};x.front={...x.front,animation:HA[id]||HA.wrinkle};}
+    });
+    const hVars=[['H0','Always on'],['H1','Play on hover'],['H2','Icon grows'],['H3','Tint + lift'],['H4','Echo motion']].map(([k,t],i)=>({k,t,pick:()=>this.setState({hV:i}),style:pill(hv===i)}));
+    const fVars=FVARS.map(v=>({k:v.l,t:v.t,pick:()=>this.setState({fv:v.k}),style:pill(st.fv===v.k)}));
+    return {
+      isF:st.concept==='F',tGrid,hVars,
+      tVars:[['T1','Unfold'],['T2','Flip'],['T3','Spotlight'],['T4','Unfold + labels'],['T5','Spine labels'],['T6','Spotlight + labels'],['T7','Wrap · Glide'],['T8','Wrap · Stagger'],['T9','Wrap · Spring'],['T10','Wrap · Fade swap']].map(([k,t],i)=>({k,t,pick:()=>this.setState({tV:i+1,tSel:null}),style:pill(tv===i+1)})),...(()=>{
+        const sv=st.szV||1;
+        const SOLD={chest:['48'],waist:['28']}, LOW={chest:['36','46'],waist:['42','44']};
+        const chip=(t,k)=>{const so=SOLD[k].includes(t),lo=LOW[k].includes(t);return {t,low:lo&&!so,style:{display:'flex',alignItems:'center',gap:'5px',minWidth:'44px',justifyContent:'center',height:'34px',padding:'0 10px',borderRadius:'4px',border:`1px solid ${so?LINE:'oklch(0.84 0.006 80)'}`,background:so?'transparent':'#fff',color:so?'oklch(0.62 0.006 80)':INK,textDecoration:so?'line-through':'none',fontSize:'13px',fontWeight:500,boxSizing:'border-box'}};};
+        const usual=st.usual;
+        const AV={Short:['36','38','40','42','44'],Regular:['36','38','40','42','44','46','48'],Long:['40','42','44','46','48']}, LOWM={Regular:['36','48'],Long:['40']};
+        const mxCols=['36','38','40','42','44','46','48'];
+        const mxRows=['Short','Regular','Long'].map(len=>({len:len[0],cells:mxCols.map(c=>{const ok=AV[len].includes(c),lo=(LOWM[len]||[]).includes(c);return {t:ok?(lo?'○':'●'):'–',style:{padding:'8px 0',textAlign:'center',color:ok?INK:'oklch(0.72 0.006 80)'}};})}));
+        return {szV1:sv===1,szV2:sv===2,szV3:sv===3,szV4:sv===4,szV5:sv===5,szV6:sv===6,szV7:sv===7,mxCols,mxRows,
+          availOpen:!!st.availOpen,availGlyph:st.availOpen?'−':'+',toggleAvail:()=>this.setState(s=>({availOpen:!s.availOpen})),
+          szVars:[['S1','Summary'],['S2','Stock chips'],['S3','Range scale'],['S4','Fit + specs'],['S5','Inline text'],['S6','Stock matrix'],['S7','Collapsed row']].map(([k,t],i)=>({k,t,pick:()=>this.setState({szV:i+1}),style:pill(sv===i+1)})),
+          avChest:['36','38','40','42','44','46','48'].map(t=>chip(t,'chest')),avWaist:['28','30','32','34','36','38','40','42','44'].map(t=>chip(t,'waist')),
+          usualSizes:['38R','40R','42R','44R','46R','40L','42L'].map(t=>({t,pick:()=>this.setState(s=>({usual:s.usual===t?null:t})),style:{height:'36px',padding:'0 12px',borderRadius:'4px',cursor:'pointer',fontSize:'13px',fontWeight:500,border:usual===t?`1.5px solid ${INK}`:'1px solid oklch(0.84 0.006 80)',background:'#fff',color:INK}})),
+          usualPicked:!!usual,usualMsg:usual?`${usual} jacket is in stock. Most guys in a ${usual} pair it with a ${parseInt(usual)-6}W pant, and both ship free.`:''};
+      })(),
+      vDotsSticky:{position:'absolute',top:0,right:0,width:'56px',height:(H-76)+'px',pointerEvents:'none'},
+      vDotsWrap:{position:'absolute',right:'14px',top:'50%',transform:'translateY(-50%)',pointerEvents:'auto',display:'flex',flexDirection:'column',alignItems:'center',padding:'5px 0',borderRadius:'999px',background:'rgba(250,248,245,.85)',backdropFilter:'blur(8px)',boxShadow:'0 2px 10px rgba(20,25,40,.12)'},
+      vDots:FS.map((c,i)=>{const on=i===(st.fIdx||0);return {label:'Go to image '+(i+1),pick:()=>this.goF(i),dot:{width:'5px',height:on?'14px':'5px',borderRadius:'3px',background:on?INK:'oklch(0.72 0.006 80)',transition:'height .25s, background-color .25s'}};}),fCol:{display:'flex',flexDirection:'column',gap:mobile?'24px':'36px'},ptmCards,ptmDots,ptmRef:this.ptmRef,
+      ptmScroll:e=>{if(!mobile)return;const t=e.currentTarget;let best=0,d=1e9;[...t.children].forEach((c,k)=>{const x=Math.abs(c.offsetLeft-t.offsetLeft+c.offsetWidth/2-t.clientWidth/2-t.scrollLeft);if(x<d){d=x;best=k;}});if(best!==ptmSel)this.setState({ptmSel:best});},
+      ptmWrap:{display:'flex',flexDirection:'column',gap:'20px',padding:mobile?'40px 0 32px':'72px 0 80px',background:'oklch(0.985 0.004 80)',color:INK},
+      ptmHead:{display:'flex',flexDirection:'column',gap:'14px',padding:mobile?'0 16px':'0 clamp(32px,5vw,80px)',width:'100%',maxWidth:'1320px',margin:'0 auto',boxSizing:'border-box'},
+      ptmTitle:{margin:0,fontSize:mobile?'28px':'40px',fontWeight:600,letterSpacing:'-.025em',lineHeight:1.1},
+      ptmTrack:mobile?{display:'flex',gap:'12px',overflowX:'auto',scrollSnapType:'x mandatory',scrollPadding:'0 16px',padding:'0 16px 4px',scrollbarWidth:'none'}:{display:'grid',gridTemplateColumns:'repeat(3,minmax(0,1fr))',gap:'24px',padding:'0 clamp(32px,5vw,80px)',width:'100%',maxWidth:'1320px',margin:'0 auto',boxSizing:'border-box'},heroStrip,heroDots,onHeroScroll:e=>{const el=e.currentTarget,k=Math.round(el.scrollLeft/el.clientWidth);if(k!==(this.state.heroIdx||0))this.setState({heroIdx:k});},fSlides,fIndex,fVars,fAcc,fNoSize:!fSize,fHasSize:!!fSize,sizeLabel:fSize,
+      fDescStyle:{fontSize:'13px',lineHeight:1.5,color:'oklch(0.45 0.012 260)',textWrap:'pretty',...(st.fDesc?{}:{display:'-webkit-box',WebkitLineClamp:2,WebkitBoxOrient:'vertical',overflow:'hidden'})},
+      fDescLabel:st.fDesc?'Read less':'Read more',fDescToggle:()=>this.setState(s=>({fDesc:!s.fDesc})),
+      fColors,fColorName:FCOLORS.find(c=>c.k===(st.fColor||'blue')).name,fChests,fLens,fCta:st.added?'Added to Bag ✓':(ready?'Add to Bag':'Choose a Size'),pj,pp,
+      openSize:()=>{const fr=this.frame;this.setState({szOpen:true,szTop:fr?fr.scrollTop:0,szH:fr?fr.clientHeight:H});},
+      closeSize:()=>this.setState({szOpen:false}),
+      addToBag:()=>{if(!ready)return;this.setState({szOpen:false,added:true});clearTimeout(this._addT);this._addT=setTimeout(()=>this.setState({added:false}),2600);},
+      fChests,fLens,pWaists,pInseams,
+      jChestLabel:st.fChest||'',jLenLabel:fLen||'',pWaistLabel:st.pWaist?st.pWaist+'W':'',pInseamLabel:!pIns?'':(pIns==='Unhemmed'?'Unhemmed':pIns+'L'),
+      szSummary:pieceLbl+(sizesLbl?' · '+sizesLbl:''),
+      szCtaLabel:'Add to Bag',
+      szCta:{transition:'transform .25s cubic-bezier(.2,.8,.2,1), background .2s',height:'52px',borderRadius:'4px',border:'none',background:ready?'#001E56':'oklch(0.86 0.006 80)',color:ready?'#fff':'oklch(0.45 0.012 260)',fontSize:'15px',fontWeight:600,cursor:ready?'pointer':'default',transition:'background .2s'},
+      szWrap:{position:'absolute',left:0,right:0,top:(st.szTop||0)+'px',height:(st.szH||H)+'px',overflow:'hidden',zIndex:40,pointerEvents:open?'auto':'none',visibility:open?'visible':'hidden',transition:open?'visibility 0s':'visibility 0s linear .4s'},
+      szScrim:{position:'absolute',inset:0,background:'rgba(15,18,28,.42)',opacity:open?1:0,transition:'opacity .3s'},
+      szPanel:mobile?{position:'absolute',left:0,right:0,bottom:0,maxHeight:'88%',display:'flex',flexDirection:'column',gap:'18px',padding:'20px 20px 24px',boxSizing:'border-box',background:'oklch(0.985 0.004 80)',borderRadius:'8px 8px 0 0',boxShadow:'0 -10px 40px rgba(15,18,28,.2)',transform:`translateY(${open?0:105}%)`,transition:'transform .4s cubic-bezier(.2,.8,.2,1)',color:INK}
+        :{position:'absolute',top:0,right:0,bottom:0,width:'min(440px, 92%)',display:'flex',flexDirection:'column',gap:'22px',padding:'28px 28px 24px',boxSizing:'border-box',background:'oklch(0.985 0.004 80)',boxShadow:'-10px 0 40px rgba(15,18,28,.18)',transform:`translateX(${open?0:105}%)`,transition:'transform .4s cubic-bezier(.2,.8,.2,1)',color:INK},
+      hdrStick:st.concept==='F'?{position:'sticky',top:0,zIndex:30}:{},fShow:true,fMobile:mobile,fDesk:!mobile,affirmMo:'$'+Math.ceil(price/3),
+      fWrap:mobile?{display:'flex',flexDirection:'column',alignItems:'stretch'}:{display:'flex',flexDirection:'row',alignItems:'flex-start'},
+      fLeft:mobile?{display:'contents'}:{position:'sticky',top:'76px',alignSelf:'flex-start',flex:'0 0 56%',minWidth:0,height:(H-76)+'px',overflowY:'auto',scrollbarWidth:'none',display:'flex',flexDirection:'column',gap:'4px'},
+      fInnerRef:this.fInnerRef,fLeftRef:this.fLeftRef,fWrapRef:this.fWrapRef,fRight:mobile?{order:1,display:'flex',flexDirection:'column',padding:'20px 20px 28px',background:'oklch(0.985 0.004 80)'}:{minHeight:(H-76)+'px',flex:'1 1 0',minWidth:0,display:'block',padding:'36px clamp(24px,4vw,56px) 32px',boxSizing:'border-box',background:'oklch(0.985 0.004 80)'},
+      isE:st.concept==='E',eRows,eCards,eIntro:fade(st.echap===0),eShowSizes:!mobile,
+      eWrap:{display:'flex',flexDirection:mobile?'column-reverse':'row',alignItems:mobile?'stretch':'flex-start'},
+      eLeft:{flex:mobile?'none':'0 0 56%',minWidth:0,display:'flex',flexDirection:'column',gap:'4px'},
+      eRight:mobile?{position:'sticky',top:0,zIndex:5,display:'flex',flexDirection:'column',padding:'14px 20px 0',background:'rgba(250,248,245,.97)',backdropFilter:'blur(10px)',borderBottom:`1px solid ${LINE}`}:{position:'sticky',top:0,height:H+'px',flex:'1 1 0',minWidth:0,display:'flex',flexDirection:'column',padding:'40px clamp(24px,4vw,56px) 0',boxSizing:'border-box',background:'oklch(0.985 0.004 80)'},
+      eBuy:{display:'flex',flexDirection:'column',gap:mobile?'10px':'16px',paddingBottom:mobile?'12px':'28px',borderBottom:`1px solid ${LINE}`,flex:'none'},
+      eStage:{position:'relative',flex:mobile?'0 0 150px':'1 0 auto',minHeight:mobile?'150px':'320px',overflow:'hidden'},
+      eBodyStyle:{fontSize:mobile?'13.5px':'15px',lineHeight:1.5,color:'oklch(0.40 0.012 260)',maxWidth:'400px',textWrap:'pretty'},
+      concepts,devices,rationale:CONCEPTS.find(c=>c.k===st.concept).why,frameStyle,frameRef:this.frameRef,onFrameScroll:()=>this.onScroll(),
+      isA:st.concept==='A',isB:st.concept==='B',isC:st.concept==='C',isD:st.concept==='D',
+      priceLabel:'$'+price.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}),ring:ringEl,
+      cur:g,mediaStyle:{position:'relative',width:'100%',aspectRatio:g.ar,borderRadius:'16px',overflow:'hidden',background:'oklch(0.9 0.015 75)'},
+      spots,thumbs,rowsA,sizes,hasSelA:!!st.sel,selA:st.sel?by[st.sel]:{},clearSel:()=>this.setState({sel:null}),
+      toggleSpots:()=>this.setState(s=>({showSpots:!s.showSpots,sel:null})),
+      toggleTrack:{width:'30px',height:'18px',borderRadius:'9px',background:st.showSpots?NAVY:'oklch(0.8 0.006 80)',position:'relative',transition:'background .2s',display:'block'},
+      toggleKnob:{position:'absolute',top:'2px',left:st.showSpots?'14px':'2px',width:'14px',height:'14px',borderRadius:'50%',background:'#fff',transition:'left .2s',display:'block'},
+      threeRef:this.threeRef,rowsB,hs3d,hasSel3d:!!st.sel3d,sel3dF:st.sel3d?by[st.sel3d]:{},reset3d:()=>this.setState({sel3d:null}),
+      storyRef:this.storyRef,storyWrap:{position:'relative',height:(H*CHAPTERS.length)+'px'},
+      stickyStyle:{position:'sticky',top:0,height:H+'px',display:'flex',flexDirection:mobile?'column':'row',overflow:'hidden'},
+      imgPane:mobile?{position:'relative',flex:'0 0 300px',overflow:'hidden',background:'oklch(0.9 0.015 75)'}:{position:'relative',flex:'0 0 56%',overflow:'hidden',background:'oklch(0.9 0.015 75)'},
+      textPane:{flex:'1 1 0',minHeight:0,minWidth:0,display:'flex',flexDirection:'column',padding:mobile?'16px 20px 0':'40px clamp(24px,4vw,56px) 0',background:'oklch(0.985 0.004 80)'},
+      buyBox:{display:'flex',flexDirection:'column',gap:mobile?'10px':'16px',paddingBottom:mobile?'14px':'28px',borderBottom:`1px solid ${LINE}`,flex:'none'},
+      headStyle:{fontSize:mobile?'22px':'clamp(26px,2.6vw,34px)',fontWeight:600,letterSpacing:'-.025em',lineHeight:1.1},
+      featHead:{fontSize:mobile?'22px':'clamp(28px,3vw,40px)',fontWeight:600,letterSpacing:'-.03em',lineHeight:1.08,textWrap:'balance'},
+      introStyle:{position:'absolute',left:0,right:0,top:mobile?'16px':'32px',display:'flex',flexDirection:'column',gap:'8px',opacity:st.chapter===0?1:0,transform:`scale(${st.chapter===0?1:0.92})`,transformOrigin:'left top',transition:st.chapter===0?'opacity .45s ease .2s, transform .6s cubic-bezier(.2,.7,.2,1) .2s':'opacity .3s ease, transform .35s ease'},
+      featCards,storyImgs,progress,featureNames:FEATURES.map(f=>f.name),showScrollHint:st.chapter===0,scrollHint:'Scroll to explore ↓',
+      wears:st.wears,years:st.years,totalWears:total,cpw:'$'+cpwN.toFixed(2),cpwLine,
+      setWears:e=>this.setState({wears:+e.target.value}),setYears:e=>this.setState({years:+e.target.value}),
+      stops,stop:{...so,fname:by[so.f].name,viz:viz(so.f,56)}
+    };
+  }
+}
+</script>
+</body>
+</html>
